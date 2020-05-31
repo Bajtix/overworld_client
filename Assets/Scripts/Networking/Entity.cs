@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
     public int id;
     public int modelId;
-
+    public string additionalData;
     private Quaternion destRot;
     private Vector3 destPos;
 
@@ -16,10 +16,11 @@ public class Entity : MonoBehaviour
         this.modelId = modelId;
     }
 
-    public void SetTargets(Vector3 p, Quaternion r)
+    public void SetTargets(Vector3 p, Quaternion r, string ad)
     {
         destPos = p;
         destRot = r;
+        additionalData = ad;
     }
 
     private void Update()

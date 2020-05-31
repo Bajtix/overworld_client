@@ -34,6 +34,7 @@ public enum ClientPackets
 {
     welcomeReceived = 1,
     playerMovement,
+    interact,
     spawnCar
 }
 

@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
             ClientSend.SpawnCar(transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)));
 
+        if (Input.GetKeyDown(KeyCode.E))
+            ClientSend.Interact(camTransform);
+
         if (UIManager.instance.loadMsg.activeInHierarchy)
         {
             if(Physics.Raycast(transform.position,new Vector3(0,-1,0),2))
@@ -87,7 +90,7 @@ public class PlayerController : MonoBehaviour
             Input.GetKey(KeyCode.A),
             Input.GetKey(KeyCode.D),
             Input.GetKey(KeyCode.Space),
-            Input.GetKey(KeyCode.E)
+            false
         };
 
         ClientSend.PlayerMovement(_inputs);

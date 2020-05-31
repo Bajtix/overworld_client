@@ -52,7 +52,7 @@ public class ClientSend : MonoBehaviour
 
     public static void Interact(Transform look) // send an interaction message containing full look rot.
     {
-        using (Packet _packet = new Packet((int)ClientPackets.welcomeReceived)) // TODO: change packet type to its own
+        using (Packet _packet = new Packet((int)ClientPackets.interact)) // TODO: change packet type to its own
         {
             _packet.Write(look.rotation);
 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5078278595069558909}
   - component: {fileID: 1532668712071249028}
   - component: {fileID: 971075604509001822}
-  - component: {fileID: 971075604509001823}
   - component: {fileID: 971075604509001821}
   - component: {fileID: -245183631971084725}
   m_Layer: 0
@@ -105,22 +104,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8383695, y: 0.38506323, z: 5.208017}
   m_Center: {x: 0, y: 0.11682433, z: 0.93162465}
---- !u!54 &971075604509001823
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971075604509001816}
-  serializedVersion: 2
-  m_Mass: 7000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &971075604509001821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   modelId: 1
+  additionalData: 
 --- !u!1 &1650182827423947909
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 6192508028765148949}
+  carEntity: {fileID: -245183631971084725}
+  turn: 0
+  invert: 0
 --- !u!1 &3446657752838817282
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +332,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 6192508030169548105}
+  carEntity: {fileID: -245183631971084725}
+  turn: 1
+  invert: 0
 --- !u!1 &4299270595050130447
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +508,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 6192508029491194070}
+  carEntity: {fileID: -245183631971084725}
+  turn: 0
+  invert: 1
 --- !u!1 &6192508028680989906
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +605,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 2
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &6192508029491194064
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +666,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 2
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &6192508029543933550
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +810,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 2
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &6192508029807069366
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6192508029807069365
 Transform:
   m_ObjectHideFlags: 0
@@ -912,7 +905,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 2
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &6484106467981403013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1079,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 6192508029637794846}
+  carEntity: {fileID: -245183631971084725}
+  turn: 1
+  invert: 1
 --- !u!1 &8633577515609246040
 GameObject:
   m_ObjectHideFlags: 0

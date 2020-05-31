@@ -81,10 +81,9 @@ public class ClientHandle : MonoBehaviour
         int _id = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
         Quaternion _rotation = _packet.ReadQuaternion();
+        string _ad = _packet.ReadString();
 
-        //GameManager.entities[_id].transform.position = _position;
-        //GameManager.entities[_id].transform.rotation = _rotation;
-        GameManager.entities[_id].SetTargets(_position, _rotation);
+        GameManager.entities[_id].SetTargets(_position, _rotation,_ad);
     }
 
     
