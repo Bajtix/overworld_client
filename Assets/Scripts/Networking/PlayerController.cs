@@ -26,7 +26,22 @@ public class PlayerController : MonoBehaviour
             ClientSend.SpawnCar(transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)));
 
         if (Input.GetKeyDown(KeyCode.E))
-            ClientSend.Interact(camTransform);
+            ClientSend.Interact(camTransform,KeyCode.E);
+
+        if (Input.GetKeyDown(KeyCode.B))
+            ClientSend.Interact(camTransform, KeyCode.B);
+
+        if (Input.GetKeyDown(KeyCode.N))
+            ClientSend.Interact(camTransform, KeyCode.N);
+
+        if (Input.GetKeyDown(KeyCode.R))
+            ClientSend.Interact(camTransform, KeyCode.R);
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ClientSend.Interact(camTransform, KeyCode.T);
+            
+        }
 
         if (UIManager.instance.loadMsg.activeInHierarchy)
         {
@@ -36,7 +51,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         
-        Debug.Log($"FRAME DEBUGGER: Running at {1/Time.deltaTime} FPS");
+        //Debug.Log($"FRAME DEBUGGER: Running at {1/Time.deltaTime} FPS");
         
     }
 

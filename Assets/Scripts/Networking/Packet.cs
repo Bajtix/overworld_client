@@ -26,7 +26,11 @@ public enum ServerPackets
 
     //-----------
     spawnEntity,
-    entityPosition
+    entityPosition,
+    killEntity,
+    chunkMod,
+    //-----------
+    time
 }
 
 /// <summary>Sent from client to server.</summary>

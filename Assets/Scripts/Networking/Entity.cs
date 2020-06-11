@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    public bool updatePos = true;
     public int id;
     public int modelId;
+    public int parentId;
     public string additionalData;
     private Quaternion destRot;
     private Vector3 destPos;
 
-    public void Initialize(int id,int modelId)
+    public void Initialize(int id,int modelId,int parentId)
     {
         this.id = id;
         this.modelId = modelId;
+        this.parentId = parentId;
     }
 
     public void SetTargets(Vector3 p, Quaternion r, string ad)
@@ -25,7 +28,10 @@ public class Entity : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, destPos, Time.deltaTime * 30);
-        transform.rotation = Quaternion.Lerp(transform.rotation, destRot, Time.deltaTime * 30);
+        if (updatePos)
+        {
+            transform.position = Vector3.Lerp(transform.position, destPos, Time.deltaTime * 30);
+            transform.rotation = Quaternion.Lerp(transform.rotation, destRot, Time.deltaTime * 30);
+        }
     }
 }

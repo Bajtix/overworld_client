@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public static Dictionary<int, PlayerManager> players = new Dictionary<int, PlayerManager>();
     public static Dictionary<int, Entity> entities = new Dictionary<int, Entity>();
 
+    public static List<ChunkMod> bufferedChunkMods = new List<ChunkMod>();
+
     public GameObject localPlayerPrefab;
     public GameObject playerPrefab;
     public GameObject[] entityPrefabs;
+    public GameObject[] terrainObjectPrefabs;
 
     private void Awake()
     {
@@ -48,12 +51,41 @@ public class GameManager : MonoBehaviour
         players.Add(_id, _player.GetComponent<PlayerManager>());
     }
 
-    public void SpawnNewEntity(int id, Vector3 position, int modelId)
+    public void SpawnNewEntity(int id, Vector3 position, Quaternion rotation, int modelId, int parentId)
     {
-        Entity _entity = Instantiate(entityPrefabs[modelId], position, Quaternion.identity).GetComponent<Entity>();
-        _entity.Initialize(id,modelId);
+        Entity _entity;
+        if (parentId == -9999)
+            _entity = Instantiate(entityPrefabs[modelId], position, rotation).GetComponent<Entity>();
+        else
+            _entity = Instantiate(entityPrefabs[modelId], position, rotation, GameManager.entities[parentId].transform).GetComponent<Entity>();
+
+        _entity.Initialize(id,modelId,parentId);
+        _entity.SetTargets(position, Quaternion.identity,"");
         entities.Add(id, _entity);
     }
 
+    public void KillEntity(int id)
+    {
+        Destroy(entities[id].gameObject);
+        entities.Remove(id);
+    }
+
+    public void ModChunk(ChunkMod c)
+    {
+        Debug.Log("Mod chunk received.");
+        if (c.type == ChunkMod.ChunkModType.Add)
+        {
+            ChunkManager.V2Int v = ChunkManager.ChunkAt(c.chunk.x, c.chunk.z);
+            GameObject w = ChunkManager.instance.chunks[v.x, v.y];
+            GameObject g = Instantiate(terrainObjectPrefabs[c.modelId],c.chunk,Quaternion.identity,w.transform);
+            w.GetComponent<TerrainGenerator>().AddFeature(g);
+        }
+        else
+        {
+            ChunkManager.V2Int v = ChunkManager.ChunkAt(c.chunk.x, c.chunk.z);
+            GameObject w = ChunkManager.instance.chunks[v.x, v.y];
+            w.GetComponent<TerrainGenerator>().RemoveFeature(c.objectId);
+        }
+    }
     
 }

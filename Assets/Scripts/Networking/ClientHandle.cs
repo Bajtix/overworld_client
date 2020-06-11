@@ -71,9 +71,12 @@ public class ClientHandle : MonoBehaviour
         Debug.Log("Spawn entity");
         int _id = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
+        Quaternion _rotation = _packet.ReadQuaternion();
         int _modelId = _packet.ReadInt();
+        int _parentId = _packet.ReadInt();
+        Debug.Log("new entity");
 
-        GameManager.instance.SpawnNewEntity(_id, _position,_modelId);
+        GameManager.instance.SpawnNewEntity(_id, _position,_rotation, _modelId,_parentId);
     }
 
     public static void EntityPosition(Packet _packet)
@@ -86,5 +89,28 @@ public class ClientHandle : MonoBehaviour
         GameManager.entities[_id].SetTargets(_position, _rotation,_ad);
     }
 
-    
+    public static void KillEntity(Packet _packet)
+    {
+        int _id = _packet.ReadInt();
+        GameManager.instance.KillEntity(_id);
+    }
+
+    public static void ChunkMod(Packet _packet)
+    {
+        int _type = _packet.ReadInt(); //Chunk Mod type. 0 - add 1 - remove
+        Vector3 _pos = _packet.ReadVector3();
+        int _id = _packet.ReadInt();
+        int _modelId = _packet.ReadInt();
+
+        GameManager.instance.ModChunk(new ChunkMod((ChunkMod.ChunkModType)_type, _pos, _id, _modelId));
+    }
+
+    public static void Time(Packet _packet)
+    {
+        float _time = _packet.ReadFloat();
+        float _clouds = _packet.ReadFloat();
+
+        TimeManager.instance.SetWorldTime(_time, _clouds);
+    }
+
 }

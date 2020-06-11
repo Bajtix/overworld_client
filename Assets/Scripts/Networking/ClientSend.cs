@@ -50,12 +50,12 @@ public class ClientSend : MonoBehaviour
         }
     }
 
-    public static void Interact(Transform look) // send an interaction message containing full look rot.
+    public static void Interact(Transform look, KeyCode c) // send an interaction message containing full look rot.
     {
         using (Packet _packet = new Packet((int)ClientPackets.interact)) // TODO: change packet type to its own
         {
             _packet.Write(look.rotation);
-
+            _packet.Write((int)c);
             SendTCPData(_packet);
         }
     }
