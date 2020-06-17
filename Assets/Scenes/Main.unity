@@ -3131,15 +3131,58 @@ MonoBehaviour:
   playerPrefab: {fileID: 7677484484946083636, guid: 557e9a3a3d9ee014087f779a676d456f,
     type: 3}
   entityPrefabs:
-  - {fileID: 283212582744607429, guid: 2660f404a7ef68245b4b7a735c3637af, type: 3}
-  - {fileID: 971075604509001816, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb, type: 3}
-  - {fileID: 8979009949907266937, guid: 7ab06d8b0bbde43479720326b1277cdd, type: 3}
-  - {fileID: 7914253511100441799, guid: e8007db7283e1a64c9f5e0438e8e82c9, type: 3}
-  - {fileID: 8788251657160450946, guid: 0a8c5ce979846fc46b5591f01edb3f7c, type: 3}
-  - {fileID: 7160066898736588829, guid: 0960d2effd56eb64b9c95b0384e2ee23, type: 3}
-  - {fileID: 8198824580136179817, guid: d19b85f1e79d4a347add8767a041e5eb, type: 3}
-  - {fileID: 7522202181895742490, guid: f60d1349adc6559439eb91e8fdcc4629, type: 3}
-  - {fileID: 2367327008419042172, guid: 381cb3907a6364c4d81f2d9ae324df96, type: 3}
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - prp_present
+    - vec_rusty-buggy
+    - bld_wall
+    - bld_foundation
+    - bld_floor
+    - bld_stairs
+    - bld_wall_door
+    - bld_wall_window
+    - utl_buildpreview
+    _keys:
+    - prp_present
+    - vec_rusty-buggy
+    - bld_wall
+    - bld_foundation
+    - bld_floor
+    - bld_stairs
+    - bld_wall_door
+    - bld_wall_window
+    - utl_buildpreview
+    _values:
+    - {fileID: 283212582744607429, guid: 2660f404a7ef68245b4b7a735c3637af, type: 3}
+    - {fileID: 971075604509001816, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb, type: 3}
+    - {fileID: 7914253511100441799, guid: e8007db7283e1a64c9f5e0438e8e82c9, type: 3}
+    - {fileID: 8979009949907266937, guid: 7ab06d8b0bbde43479720326b1277cdd, type: 3}
+    - {fileID: 8198824580136179817, guid: d19b85f1e79d4a347add8767a041e5eb, type: 3}
+    - {fileID: 7522202181895742490, guid: f60d1349adc6559439eb91e8fdcc4629, type: 3}
+    - {fileID: 8788251657160450946, guid: 0a8c5ce979846fc46b5591f01edb3f7c, type: 3}
+    - {fileID: 7160066898736588829, guid: 0960d2effd56eb64b9c95b0384e2ee23, type: 3}
+    - {fileID: 2367327008419042172, guid: 381cb3907a6364c4d81f2d9ae324df96, type: 3}
   terrainObjectPrefabs: []
 --- !u!4 &761847842
 Transform:

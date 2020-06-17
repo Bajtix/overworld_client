@@ -187,14 +187,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 7370411432863727900}
-  - {fileID: 7006154878252733373}
-  - {fileID: 5429046486925620710}
-  - {fileID: 8994023073892159202}
-  - {fileID: 8043945664082492667}
-  - {fileID: 1048906929562564952}
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - bld_wall
+    - bld_foundation
+    - bld_floor
+    - bld_stairs
+    - bld_wall_door
+    - bld_wall_window
+    _keys:
+    - bld_wall
+    - bld_foundation
+    - bld_floor
+    - bld_stairs
+    - bld_wall_door
+    - bld_wall_window
+    _values:
+    - {fileID: 7006154878252733373}
+    - {fileID: 7370411432863727900}
+    - {fileID: 8043945664082492667}
+    - {fileID: 1048906929562564952}
+    - {fileID: 5429046486925620710}
+    - {fileID: 8994023073892159202}
 --- !u!1 &5429046486925620710
 GameObject:
   m_ObjectHideFlags: 0

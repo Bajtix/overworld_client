@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RotaryHeart.Lib.SerializableDictionary; //TY <3
+
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +16,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject localPlayerPrefab;
     public GameObject playerPrefab;
-    public GameObject[] entityPrefabs;
+    [System.Serializable]
+    public class _EDIC : SerializableDictionaryBase<string, GameObject> { }
+    public _EDIC entityPrefabs;
     public GameObject[] terrainObjectPrefabs;
 
     private void Awake()
@@ -51,7 +55,7 @@ public class GameManager : MonoBehaviour
         players.Add(_id, _player.GetComponent<PlayerManager>());
     }
 
-    public void SpawnNewEntity(int id, Vector3 position, Quaternion rotation, int modelId, int parentId)
+    public void SpawnNewEntity(int id, Vector3 position, Quaternion rotation, string modelId, int parentId)
     {
         Entity _entity;
         if (parentId == -9999)

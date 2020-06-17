@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingPreview : MonoBehaviour
 {
-    public GameObject[] display;
+    public GameManager._EDIC display;
     private Entity e;
 
     private void Start()
@@ -13,16 +13,12 @@ public class BuildingPreview : MonoBehaviour
     }
     private void Update()
     {
-        int sel = int.Parse(e.additionalData);
-        for(int i = 0; i < display.Length; i++)
+        string sel = e.additionalData;
+        foreach(GameObject g in display.Values)
         {
-            if (display[i] != null)
-            {
-                if (i != sel)
-                    display[i].SetActive(false);
-                else
-                    display[i].SetActive(true);
-            }
+            g.SetActive(false);
         }
+
+        display[sel].SetActive(true);
     }
 }

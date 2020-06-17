@@ -6,13 +6,13 @@ public class Entity : MonoBehaviour
 {
     public bool updatePos = true;
     public int id;
-    public int modelId;
+    public string modelId;
     public int parentId;
     public string additionalData;
     private Quaternion destRot;
     private Vector3 destPos;
 
-    public void Initialize(int id,int modelId,int parentId)
+    public void Initialize(int id,string modelId,int parentId)
     {
         this.id = id;
         this.modelId = modelId;

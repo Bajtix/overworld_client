@@ -72,7 +72,7 @@ public class ClientHandle : MonoBehaviour
         int _id = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
         Quaternion _rotation = _packet.ReadQuaternion();
-        int _modelId = _packet.ReadInt();
+        string _modelId = _packet.ReadString();
         int _parentId = _packet.ReadInt();
         Debug.Log("new entity");
 
