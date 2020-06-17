@@ -7,6 +7,8 @@ public class TerrainGenerator : MonoBehaviour
 {
     private Mesh mesh;
     private MeshCollider meshCollider;
+    private GameObject grassObj;
+    public Material grassy;
 
     public Dictionary<int,ChunkObject> objects;
 
@@ -106,9 +108,13 @@ public class TerrainGenerator : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         Debug.Log($"GENERATE: DONE (ChunkCount: {ChunkManager.instance.chunkCount})");
+        //grassObj = Instantiate(gameObject, transform, true);
+        //grassObj.GetComponent<MeshRenderer>().material = Instantiate(grassy);
 
         //StartCoroutine("AssignTexture");
     }
+
+    
 
     public IEnumerator AssignTexture()
     {
