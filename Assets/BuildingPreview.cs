@@ -18,7 +18,7 @@ public class BuildingPreview : MonoBehaviour
         {
             g.SetActive(false);
         }
-
-        display[sel].SetActive(true);
+        if(display.ContainsKey(sel))
+            display[sel].SetActive(true);
     }
 }

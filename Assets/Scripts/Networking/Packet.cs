@@ -23,6 +23,7 @@ public enum ServerPackets
     spawnEnemy,
     enemyPosition,
     enemyHealth,
+    playerInfo,
 
     //-----------
     spawnEntity,

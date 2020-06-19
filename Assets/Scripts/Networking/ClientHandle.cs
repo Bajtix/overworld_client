@@ -113,4 +113,12 @@ public class ClientHandle : MonoBehaviour
         TimeManager.instance.SetWorldTime(_time, _clouds);
     }
 
+    public static void PlayerInfo(Packet _packet)
+    {
+        int _player = _packet.ReadInt();
+        string _toolName = _packet.ReadString();
+
+        GameManager.players[_player].GetComponent<PlayerInventory>().SelectItem(_toolName);
+    }
+
 }

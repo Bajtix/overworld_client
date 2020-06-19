@@ -37,11 +37,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
             ClientSend.Interact(camTransform, KeyCode.R);
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ClientSend.Interact(camTransform, KeyCode.T);
-            
-        }
+        if (Input.GetKeyDown(KeyCode.Q))
+            ClientSend.Interact(camTransform, KeyCode.Q);
+
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+            ClientSend.Interact(camTransform, KeyCode.PageUp);
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            ClientSend.Interact(camTransform, KeyCode.PageDown);
 
         if (UIManager.instance.loadMsg.activeInHierarchy)
         {
