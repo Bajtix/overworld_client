@@ -21,10 +21,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ToggleCursorMode();
-        }
+        
 
         if (Cursor.lockState == CursorLockMode.Locked)
         {

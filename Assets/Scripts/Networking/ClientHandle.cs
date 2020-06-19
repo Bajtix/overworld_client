@@ -121,4 +121,14 @@ public class ClientHandle : MonoBehaviour
         GameManager.players[_player].GetComponent<PlayerInventory>().SelectItem(_toolName);
     }
 
+    public static void OpenGUI(Packet _packet)
+    {
+        string _s = _packet.ReadString();
+        bool _open = _packet.ReadBool();
+        if(_open)
+            UIManager.instance.ShowGUI(_s);
+        else
+            UIManager.instance.HideGUI(_s);
+    }
+
 }

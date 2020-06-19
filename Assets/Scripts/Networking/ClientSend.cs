@@ -70,6 +70,16 @@ public class ClientSend : MonoBehaviour
         }
     }
 
+    public static void SendMenuReply(int i)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.menuResponse))
+        {
+            _packet.Write(i);
+
+            SendTCPData(_packet);
+        }
+    }
+
     
     #endregion
 }

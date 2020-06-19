@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using RotaryHeart.Lib.SerializableDictionary;
 public class UIManager : MonoBehaviour
 {
+
+    [System.Serializable]
+    public class DIRGUI : SerializableDictionaryBase<string, GameObject> { }
+    
+
     public static UIManager instance;
 
     public GameObject startMenu;
@@ -20,6 +25,8 @@ public class UIManager : MonoBehaviour
 
     private float loadingCountdown;
     public bool loading;
+
+    public DIRGUI guis;
 
     private void Awake()
     {
@@ -73,6 +80,7 @@ public class UIManager : MonoBehaviour
     {
         loadscreen.SetActive(false);
         loadingTerrain.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ChangeGFXQuality(int i)
@@ -88,5 +96,19 @@ public class UIManager : MonoBehaviour
         renderDistanceLbl.text = "Render distance: " + to;
         RenderSettings.fogDensity = 0.03f / to;
         Debug.Log("Changed Render distance to " + Mathf.RoundToInt(to));
+    }
+
+    public void ShowGUI(string name)
+    {
+        Debug.Log("open menu " + name);
+        Cursor.lockState = CursorLockMode.Confined;
+        guis[name].SetActive(true);
+        Debug.Log("opened menu");
+    }
+
+    public void HideGUI(string name)
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        guis[name].SetActive(false);
     }
 }

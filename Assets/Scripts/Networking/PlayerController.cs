@@ -22,29 +22,33 @@ public class PlayerController : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
-            ClientSend.SpawnCar(transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)));
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
 
-        if (Input.GetKeyDown(KeyCode.E))
-            ClientSend.Interact(camTransform,KeyCode.E);
+            if (Input.GetKeyDown(KeyCode.C))
+                ClientSend.SpawnCar(transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)));
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-            ClientSend.Interact(camTransform, KeyCode.Mouse0);
+            if (Input.GetKeyDown(KeyCode.E))
+                ClientSend.Interact(camTransform, KeyCode.E);
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-            ClientSend.Interact(camTransform, KeyCode.Mouse1);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+                ClientSend.Interact(camTransform, KeyCode.Mouse0);
 
-        if (Input.GetKeyDown(KeyCode.R))
-            ClientSend.Interact(camTransform, KeyCode.R);
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+                ClientSend.Interact(camTransform, KeyCode.Mouse1);
 
-        if (Input.GetKeyDown(KeyCode.Q))
-            ClientSend.Interact(camTransform, KeyCode.Q);
+            if (Input.GetKeyDown(KeyCode.R))
+                ClientSend.Interact(camTransform, KeyCode.R);
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0)
-            ClientSend.Interact(camTransform, KeyCode.PageUp);
+            if (Input.GetKeyDown(KeyCode.Q))
+                ClientSend.Interact(camTransform, KeyCode.Q);
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
-            ClientSend.Interact(camTransform, KeyCode.PageDown);
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+                ClientSend.Interact(camTransform, KeyCode.PageUp);
+
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+                ClientSend.Interact(camTransform, KeyCode.PageDown);
+        }
 
         if (UIManager.instance.loadMsg.activeInHierarchy)
         {
