@@ -88,7 +88,7 @@ public class TerrainGenerator : MonoBehaviour
 
         System.Random r = new System.Random(Mathf.RoundToInt(TerrainSettings.instance.seed + transform.position.x + transform.position.y) / 3);
 
-        float densityForChunk = r.Next(2, 4);
+        float densityForChunk = r.Next(0, 3);
 
         for (int i = 0; i < densityForChunk; i++)
         {

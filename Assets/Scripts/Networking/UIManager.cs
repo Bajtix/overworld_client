@@ -22,9 +22,15 @@ public class UIManager : MonoBehaviour
     public InputField ipField;
 
     public TMPro.TextMeshProUGUI renderDistanceLbl;
+    public TMPro.TextMeshProUGUI senseLbl;
 
     private float loadingCountdown;
     public bool loading;
+    public float Sensitivity = 100f;
+
+    public TMPro.TMP_Dropdown resDropdown;
+
+    private Resolution[] resolutions;
 
     public DIRGUI guis;
 
@@ -42,7 +48,19 @@ public class UIManager : MonoBehaviour
 
         version.text = Application.version;
     }
+    private void Start()
+    {
 
+        resolutions = Screen.resolutions;
+        
+
+        List<TMPro.TMP_Dropdown.OptionData> l = new List<TMPro.TMP_Dropdown.OptionData>();
+        foreach(Resolution r in resolutions)
+        {
+            l.Add(new TMPro.TMP_Dropdown.OptionData(r.width + " x " + r.height));
+        }
+        resDropdown.AddOptions(l);
+    }
     private void Update()
     {
         if (loading)
@@ -81,6 +99,7 @@ public class UIManager : MonoBehaviour
         loadscreen.SetActive(false);
         loadingTerrain.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     public void ChangeGFXQuality(int i)
@@ -110,5 +129,16 @@ public class UIManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         guis[name].SetActive(false);
+    }
+
+    public void SetSense(float s)
+    {
+        Sensitivity = s;
+        senseLbl.text = "Sensivity: " + s/200;
+    }
+
+    public void SetRes(int i)
+    {
+        Screen.SetResolution(resolutions[i].width, resolutions[i].height, false);
     }
 }

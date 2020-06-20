@@ -25,7 +25,8 @@ public class RadialMenu : MonoBehaviour
 
     public TextMeshProUGUI text;
 
-    public float centerOffset = 10;
+    private float centerOffset = 10;
+    public float referenceOffset = 400;
 
 
     private void OnEnable()
@@ -44,13 +45,17 @@ public class RadialMenu : MonoBehaviour
 
     public void ShowItems()
     {
+        centerOffset = referenceOffset * (Screen.width / 1920f);
+        Debug.Log("Screen width: " + Screen.width + " / 1920 = " + (referenceOffset * (Screen.width / 1920f)));
         float angleBetweenElements = 360f / items.Length;
         Vector3 spawnPos = new Vector3(0, 1, 0);
         foreach (RadialMenuItem i in items)
         {
             spawnPos = RotateVector2D(spawnPos, angleBetweenElements);
             splitters.Add(spawnPos);
-            RadialMenuItemPrefab p = Instantiate(prefab, RotateVector2D(spawnPos, angleBetweenElements/2) * centerOffset + transform.position, Quaternion.identity, canvas.transform).AddComponent<RadialMenuItemPrefab>();
+            RadialMenuItemPrefab p = Instantiate(prefab, transform, false).AddComponent<RadialMenuItemPrefab>();
+            
+            p.transform.position = RotateVector2D(spawnPos, angleBetweenElements / 2) * centerOffset + transform.position;
             p.colorS = selectedColor;
             p.colorD = deselectedColor;
             p.item = i;
@@ -81,7 +86,7 @@ public class RadialMenu : MonoBehaviour
             float angleArea = Vector3.Angle(V1, V2);
             if (Vector3.Angle(V1, Input.mousePosition - transform.position) < angleArea && Vector3.Angle(V2, Input.mousePosition - transform.position) < angleArea)
             {
-                Debug.Log("Selected " + i);
+                //Debug.Log("Selected " + i);
                 instances[i].selected = true;
                 text.text = items[i].label;
                 if (Input.GetKey(KeyCode.Mouse0))
