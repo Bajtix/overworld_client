@@ -141,4 +141,9 @@ public class UIManager : MonoBehaviour
     {
         Screen.SetResolution(resolutions[i].width, resolutions[i].height, false);
     }
+
+    public void ToggleFS()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 }

@@ -1,6 +1,8 @@
 // Tessellation programs based on this article by Catlike Coding:
 // https://catlikecoding.com/unity/tutorials/advanced-rendering/tessellation/
 
+#include "UnityCG.cginc"
+
 struct vertexInput
 {
 	float4 vertex : POSITION;
@@ -41,11 +43,12 @@ float _TessellationUniform;
 
 TessellationFactors patchConstantFunction (InputPatch<vertexInput, 3> patch)
 {
+	float dist = length(ObjSpaceViewDir(patch[0].vertex));
 	TessellationFactors f;
-	f.edge[0] = _TessellationUniform;
-	f.edge[1] = _TessellationUniform;
-	f.edge[2] = _TessellationUniform;
-	f.inside = _TessellationUniform;
+	f.edge[0] = _TessellationUniform * 0.1;
+	f.edge[1] = _TessellationUniform * 0.1;
+	f.edge[2] = _TessellationUniform * 0.1;
+	f.inside = _TessellationUniform * 0.1;
 	return f;
 }
 

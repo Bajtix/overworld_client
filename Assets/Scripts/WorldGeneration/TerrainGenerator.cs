@@ -10,6 +10,8 @@ public class TerrainGenerator : MonoBehaviour
     private GameObject grassObj;
     public Material grassy;
 
+    public GameObject lowLodV;
+
     public Dictionary<int,ChunkObject> objects;
 
     int nid = 0;
@@ -50,6 +52,7 @@ public class TerrainGenerator : MonoBehaviour
 
         StartCoroutine("SpawnTrees");
         StartCoroutine("SpawnDetails");
+        StartCoroutine("SpawnGrass");
     }
 
     public IEnumerator SpawnTrees()
@@ -114,7 +117,27 @@ public class TerrainGenerator : MonoBehaviour
         //StartCoroutine("AssignTexture");
     }
 
-    
+    public IEnumerator SpawnGrass()
+    {
+        Debug.Log("GENERATE: SET G VERTS");
+        mesh = lowLodV.GetComponent<MeshFilter>().mesh;
+        Vector3[] verts = mesh.vertices;
+
+        for (int i = 0; i < verts.Length; i++)
+        {
+            var v = verts[i];
+            verts[i].y = GetPass(v.x, v.z, TerrainSettings.instance.noiseScale / 70, TerrainSettings.instance.multiplier * 20)
+                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale / 20, TerrainSettings.instance.multiplier * 10)
+                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale, TerrainSettings.instance.multiplier)
+                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale * 4, TerrainSettings.instance.multiplier / 8);
+            if (i % 400 == 0)
+                yield return new WaitForEndOfFrame();
+        }
+
+        mesh.vertices = verts;
+        mesh.RecalculateBounds();
+        mesh.RecalculateNormals();
+    }
 
     public IEnumerator AssignTexture()
     {
