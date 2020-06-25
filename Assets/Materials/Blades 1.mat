@@ -60,11 +60,11 @@ Material:
         m_Scale: {x: 0.01, y: 0.01}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BendRotationRandom: 0.2
-    - _BladeCurve: 2
-    - _BladeForward: 0.38
-    - _BladeHeight: 0.2
-    - _BladeHeightRandom: 0.3
+    - _BendRotationRandom: 0.43
+    - _BladeCurve: 1.58
+    - _BladeForward: 0.17
+    - _BladeHeight: 0.34
+    - _BladeHeightRandom: 0.36
     - _BladeRandomAmount: 0.5
     - _BladeSegments: 3
     - _BladeWidth: 0.02
@@ -85,7 +85,10 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TessellationUniform: 64
+    - _TessellationFalloff: 0.34
+    - _TessellationMaxDist: 20
+    - _TessellationMinDist: 26.3
+    - _TessellationUniform: 3000
     - _TranslucentGain: 0.888
     - _UVSec: 0
     - _WindScale: 1

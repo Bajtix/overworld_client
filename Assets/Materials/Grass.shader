@@ -6,8 +6,11 @@ Shader "Roystan/Grass"
         _TopColor("Top Color", Color) = (1,1,1,1)
 		_BottomColor("Bottom Color", Color) = (1,1,1,1)
 		_TranslucentGain("Translucent Gain", Range(0,1)) = 0.5
+		[Header(Tesselation)]
+		_TessellationUniform ("Tessellation Uniform", Float) = 1
+		_TessellationFalloff ("Tessellation Falloff",Float) = 1
 		[Space]
-		_TessellationUniform ("Tessellation Uniform", Range(1, 64)) = 1
+		_TessellationMinDist("Min Tesseltion Distance", Float) = 10
 		[Header(Blades)]
 		_BladeWidth("Blade Width", Float) = 0.05
 		_BladeWidthRandom("Blade Width Random", Float) = 0.02

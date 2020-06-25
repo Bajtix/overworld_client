@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class WheelRenderer : MonoBehaviour
 {
-    public WheelCollider wheel;
+    //public WheelCollider wheel;
     public Entity carEntity;
     private float motorAngle = 0;
     private float steerAngle = 0;
     public bool turn = false;
     public bool invert = false;
+    public bool invertrpm = false;
+    public float radiusMultiplier = 1;
+
 
     private Vector3 basePos;
 
@@ -19,8 +22,13 @@ public class WheelRenderer : MonoBehaviour
     }
     private void Update()
     {
-        steerAngle = float.Parse(carEntity.additionalData);
-        //motorAngle += wheel.rpm / 60 * 360 * Time.deltaTime;
+        string[] n = carEntity.additionalData.Split(':');
+        steerAngle = float.Parse(n[0]);
+        float motorAnglew = float.Parse(n[1]);
+        if(!invertrpm)
+            motorAngle += motorAnglew / 60 * 360 * Time.deltaTime / radiusMultiplier;
+        else
+            motorAngle -= motorAnglew / 60 * 360 * Time.deltaTime / radiusMultiplier;
         if (turn)
         {
             if (!invert)
@@ -28,15 +36,10 @@ public class WheelRenderer : MonoBehaviour
             else
                 transform.localRotation = Quaternion.AngleAxis(steerAngle + 270, Vector3.up) * Quaternion.AngleAxis(motorAngle, Vector3.forward);           
         }
-        var wheelCCenter = wheel.transform.TransformPoint(wheel.center);
-        RaycastHit hit;
-        if (Physics.Raycast(wheelCCenter, -Vector3.up, out hit, wheel.suspensionDistance + wheel.radius))
-        {
-            transform.position = hit.point + (Vector3.up * wheel.radius);
-        }
         else
         {
-            transform.position = wheelCCenter - (Vector3.up * wheel.suspensionDistance);
+            transform.localRotation = Quaternion.AngleAxis(90, Vector3.up) * Quaternion.AngleAxis(motorAngle, Vector3.forward);
         }
+        
     }
 }

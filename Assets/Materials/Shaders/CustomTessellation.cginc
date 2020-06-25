@@ -40,15 +40,19 @@ vertexOutput tessVert(vertexInput v)
 }
 
 float _TessellationUniform;
+float _TessellationFalloff;
+
+float _TessellationMinDist;
 
 TessellationFactors patchConstantFunction (InputPatch<vertexInput, 3> patch)
 {
-	float dist = length(ObjSpaceViewDir(patch[0].vertex));
+	float dist = length(ObjSpaceViewDir(patch[1].vertex)) / _TessellationFalloff;
+	if (dist < _TessellationMinDist) dist = _TessellationMinDist;
 	TessellationFactors f;
-	f.edge[0] = _TessellationUniform * 0.1;
-	f.edge[1] = _TessellationUniform * 0.1;
-	f.edge[2] = _TessellationUniform * 0.1;
-	f.inside = _TessellationUniform * 0.1;
+	f.edge[0] = _TessellationUniform * 1/dist;
+	f.edge[1] = _TessellationUniform * 1/dist;
+	f.edge[2] = _TessellationUniform * 1/dist;
+	f.inside = _TessellationUniform * 1/dist;
 	return f;
 }
 
@@ -78,3 +82,6 @@ vertexOutput domain(TessellationFactors factors, OutputPatch<vertexInput, 3> pat
 
 	return tessVert(v);
 }
+
+
+//work

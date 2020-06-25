@@ -25,9 +25,6 @@ public class PlayerController : MonoBehaviour
         if (Cursor.lockState == CursorLockMode.Locked)
         {
 
-            if (Input.GetKeyDown(KeyCode.C))
-                ClientSend.SpawnCar(transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)));
-
             if (Input.GetKeyDown(KeyCode.E))
                 ClientSend.Interact(camTransform, KeyCode.E);
 
