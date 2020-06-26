@@ -13,7 +13,7 @@ public class WheelRenderer : MonoBehaviour
     public bool invertrpm = false;
     public float radiusMultiplier = 1;
 
-
+    public GameObject[] particles;
     private Vector3 basePos;
 
     private void Start()
@@ -25,7 +25,27 @@ public class WheelRenderer : MonoBehaviour
         string[] n = carEntity.additionalData.Split(':');
         steerAngle = float.Parse(n[0]);
         float motorAnglew = float.Parse(n[1]);
-        if(!invertrpm)
+        bool playerIn = bool.Parse(n[2]);
+        if (playerIn)
+        {
+            foreach (GameObject o in particles)
+            {
+                o.SetActive(true);
+            }
+
+            if (!carEntity.GetComponent<AudioSource>().isPlaying)
+                carEntity.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            carEntity.GetComponent<AudioSource>().Stop();
+            foreach (GameObject o in particles)
+            {
+                o.SetActive(false);
+            }
+        }
+
+        if (!invertrpm)
             motorAngle += motorAnglew / 60 * 360 * Time.deltaTime / radiusMultiplier;
         else
             motorAngle -= motorAnglew / 60 * 360 * Time.deltaTime / radiusMultiplier;
