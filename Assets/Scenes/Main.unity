@@ -5180,7 +5180,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &534669904
 Camera:
   m_ObjectHideFlags: 0
@@ -12711,10 +12711,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.376
       objectReference: {fileID: 0}
+    - target: {fileID: 5158826164449569920, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5490935616595351129, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627507025032672465, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6192508028680989906, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
         type: 3}
@@ -12756,15 +12766,30 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6751010270916201067, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8303318194070700352, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8404150940374460385, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8633577515609246040, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784634848817741030, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9207734454186194552, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb,
         type: 3}

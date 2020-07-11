@@ -19,11 +19,11 @@ public class ChunkManager : MonoBehaviour
             instance = this;
         }
 
-        chunks = new GameObject[1000, 1000];
+        chunks = new GameObject[6900, 6900];
 
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 6900; i++)
         {
-            for (int j = 0; j < 1000; j++)
+            for (int j = 0; j < 6900; j++)
             {
                 chunks[i, j] = null;                           
             }
