@@ -274,7 +274,7 @@ public class Client : MonoBehaviour
                 using (Packet _packet = new Packet(_data))
                 {
                     int _packetId = _packet.ReadInt();
-                    Debug.LogWarning($"Received packet of type {_packetId}");
+                    //Debug.LogWarning($"Received packet of type {_packetId}");
                     packetHandlers[_packetId](_packet); // Call appropriate method to handle the packet
                 }
             });
