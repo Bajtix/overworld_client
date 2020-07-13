@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7476987386278623996}
   - component: {fileID: 4748872720821988292}
   - component: {fileID: 572858501362803548}
-  - component: {fileID: 5580627631553954372}
+  - component: {fileID: 6537014749054294083}
   m_Layer: 0
   m_Name: Broadleaf 3_LOD1
   m_TagString: Untagged
@@ -82,14 +82,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &5580627631553954372
+--- !u!193 &6537014749054294083
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509097831499010002}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: d6852bf5b6c867340b95745614d67f68,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &2185625217876541974
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 3213505364053970104}
   - component: {fileID: 5882704447658824052}
   - component: {fileID: 4419831937467472340}
-  - component: {fileID: 7963152828947389744}
+  - component: {fileID: 7211741888230617734}
   m_Layer: 0
   m_Name: Broadleaf 3_LOD0
   m_TagString: Untagged
@@ -174,14 +174,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &7963152828947389744
+--- !u!193 &7211741888230617734
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2185625217876541974}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: d6852bf5b6c867340b95745614d67f68,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &2733998545010779893
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 2190055107689738680}
   - component: {fileID: 3597084790343503686}
   - component: {fileID: 5726003974989690050}
-  - component: {fileID: 1732570374899866482}
+  - component: {fileID: 8903441481300092887}
   m_Layer: 0
   m_Name: Broadleaf 3_LOD4
   m_TagString: Untagged
@@ -309,14 +309,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &1732570374899866482
+--- !u!193 &8903441481300092887
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4025929472694363746}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: d6852bf5b6c867340b95745614d67f68,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &5241243133179079708
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 8169063297382821252}
   - component: {fileID: 378698293854951017}
   - component: {fileID: 4072574676410521003}
-  - component: {fileID: 6934795423627581512}
+  - component: {fileID: 3256764233706148085}
   m_Layer: 0
   m_Name: Broadleaf 3_LOD3
   m_TagString: Untagged
@@ -400,14 +400,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &6934795423627581512
+--- !u!193 &3256764233706148085
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5241243133179079708}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: d6852bf5b6c867340b95745614d67f68,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &5823543066102169780
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 2781805706172708157}
   - component: {fileID: 79497354410663945}
   - component: {fileID: 4785707759044088111}
-  - component: {fileID: 2117367945907768403}
+  - component: {fileID: 6200857834074392925}
   m_Layer: 0
   m_Name: Broadleaf 3_LOD2
   m_TagString: Untagged
@@ -492,14 +492,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &2117367945907768403
+--- !u!193 &6200857834074392925
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5823543066102169780}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: d6852bf5b6c867340b95745614d67f68,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &5845062237919861825
@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 7441790447746657874}
   - component: {fileID: 8013331373733427350}
   - component: {fileID: 8225428194216822030}
+  - component: {fileID: 4001337977975558180}
   m_Layer: 0
   m_Name: Broadleaf 3
   m_TagString: Untagged
@@ -592,6 +593,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!193 &4001337977975558180
+Tree:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5845062237919861825}
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
+    type: 3}
+  m_TreeData: {fileID: 0}
 --- !u!1 &6141379695973076504
 GameObject:
   m_ObjectHideFlags: 0

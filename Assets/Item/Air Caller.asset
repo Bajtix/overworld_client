@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3968c2f30178a364b8b488cbbdbe9622, type: 3}
   m_Name: Air Caller
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2402b848e9ebc664f981abb9b7089cf4, type: 3}
   name: Air Caller
   description: 
   maxStackCount: 0

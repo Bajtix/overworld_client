@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3968c2f30178a364b8b488cbbdbe9622, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c81cfbf6834c09642a332d1abcf0ba69, type: 3}
   name: Hammer
   description: 
   maxStackCount: 0

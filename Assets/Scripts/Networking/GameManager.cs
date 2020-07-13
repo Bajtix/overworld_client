@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public class _EDIC : SerializableDictionaryBase<string, GameObject> { }
     public _EDIC entityPrefabs;
     public GameObject[] terrainObjectPrefabs;
+    public List<Item> items;
 
     private void Awake()
     {
@@ -34,6 +35,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public Item GetItem(string name)
+    {
+        foreach (Item i in items)
+            if (i.name == name)
+                return i;
+        return null;
+    }
     /// <summary>Spawns a player.</summary>
     /// <param name="_id">The player's ID.</param>
     /// <param name="_name">The player's name.</param>

@@ -81,6 +81,14 @@ public class ClientSend : MonoBehaviour
         }
     }
 
+    public static void InventoryRequest()
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.invReq))
+        {
+            _packet.Write(true);
+            SendTCPData(_packet);
+        }
+    }
     
     #endregion
 }

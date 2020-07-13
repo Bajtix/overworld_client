@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2682474630385232319}
   - component: {fileID: 445744894523127985}
   - component: {fileID: 4719410224284421050}
-  - component: {fileID: 4192254641337883372}
+  - component: {fileID: 2472090201135622919}
   m_Layer: 0
   m_Name: Conifer 2_LOD4
   m_TagString: Untagged
@@ -80,14 +80,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &4192254641337883372
+--- !u!193 &2472090201135622919
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880560896619911726}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 453696018e2a734428ce115efaefe911,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &4020331146502501765
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 584631034703376989}
   - component: {fileID: 9211793689053579549}
   - component: {fileID: 5437333732892028046}
-  - component: {fileID: 8091015136332829215}
+  - component: {fileID: 8899177317744907283}
   m_Layer: 0
   m_Name: Conifer 2_LOD1
   m_TagString: Untagged
@@ -172,14 +172,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &8091015136332829215
+--- !u!193 &8899177317744907283
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4020331146502501765}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 453696018e2a734428ce115efaefe911,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &5061066009233346001
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 4455976816811892163}
   - component: {fileID: 3644106187810819208}
   - component: {fileID: 1712658159504727871}
-  - component: {fileID: 4417609836012312340}
+  - component: {fileID: 7132380670094074018}
   m_Layer: 0
   m_Name: Conifer 2_LOD0
   m_TagString: Untagged
@@ -264,14 +264,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &4417609836012312340
+--- !u!193 &7132380670094074018
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5061066009233346001}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 453696018e2a734428ce115efaefe911,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &5895272235126195679
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 776105123233440056}
   - component: {fileID: 1982558977730678094}
   - component: {fileID: 4733849260852060614}
-  - component: {fileID: 2687081455915000143}
+  - component: {fileID: 6473570900049297671}
   m_Layer: 0
   m_Name: Conifer 2_LOD2
   m_TagString: Untagged
@@ -444,14 +444,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &2687081455915000143
+--- !u!193 &6473570900049297671
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8590866372813063452}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 453696018e2a734428ce115efaefe911,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}
 --- !u!1 &9050051808522718420
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 8649957102990231872}
   - component: {fileID: 1563286232963679472}
   - component: {fileID: 4506136769075222904}
-  - component: {fileID: 629464675425701974}
+  - component: {fileID: 2238310886085708441}
   m_Layer: 0
   m_Name: Conifer 2_LOD3
   m_TagString: Untagged
@@ -535,13 +535,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!193 &629464675425701974
+--- !u!193 &2238310886085708441
 Tree:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9050051808522718420}
-  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 453696018e2a734428ce115efaefe911,
+  m_SpeedTreeWindAsset: {fileID: 22800000, guid: 1154d4a7bdb53e7488bd4ab66ab37059,
     type: 3}
   m_TreeData: {fileID: 0}

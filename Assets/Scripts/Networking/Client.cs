@@ -306,7 +306,8 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.chunkMod, ClientHandle.ChunkMod },
             { (int)ServerPackets.time, ClientHandle.Time },
             { (int)ServerPackets.playerInfo, ClientHandle.PlayerInfo },
-            { (int)ServerPackets.openGUI, ClientHandle.OpenGUI }
+            { (int)ServerPackets.openGUI, ClientHandle.OpenGUI },
+            { (int)ServerPackets.inventory, ClientHandle.LoadInventory }
         };
         Debug.Log("Initialized packets.");
     }
