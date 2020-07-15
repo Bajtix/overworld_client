@@ -26,6 +26,7 @@ public enum ServerPackets
     playerInfo,
     openGUI,
     inventory,
+    info,
 
     //-----------
     spawnEntity,

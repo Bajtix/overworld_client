@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
     private Resolution[] resolutions;
 
     public DIRGUI guis;
+    public InfoBox infoBox;
 
     private void Awake()
     {

@@ -155,4 +155,10 @@ public class ClientHandle : MonoBehaviour
         UIManager.instance.gameObject.GetComponent<InventoryRenderer>().RenderInventory(stacks);
     }
 
+    public static void ShowInfoBox(Packet _packet)
+    {
+        string _info = _packet.ReadString();
+        UIManager.instance.infoBox.ShowInfo(_info);
+    }
+
 }

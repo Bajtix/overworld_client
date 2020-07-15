@@ -307,7 +307,8 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.time, ClientHandle.Time },
             { (int)ServerPackets.playerInfo, ClientHandle.PlayerInfo },
             { (int)ServerPackets.openGUI, ClientHandle.OpenGUI },
-            { (int)ServerPackets.inventory, ClientHandle.LoadInventory }
+            { (int)ServerPackets.inventory, ClientHandle.LoadInventory },
+            { (int)ServerPackets.info, ClientHandle.ShowInfoBox }
         };
         Debug.Log("Initialized packets.");
     }
