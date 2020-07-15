@@ -44,7 +44,8 @@ public enum ClientPackets
     interact,
     spawnCar,
     menuResponse,
-    invReq
+    invReq,
+    invMod
 }
 
 public class Packet : IDisposable

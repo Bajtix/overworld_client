@@ -10,10 +10,14 @@ public class InventoryRenderer : MonoBehaviour
     public Vector2 areaStart;
     public Vector2 slotCounts;
 
+    public int from = -1, to = - 1;
+    public bool transfering = false;
+
+
     private List<GameObject> allSlots;
 
     
-
+    //to trzeba będzie przeprojektować na pewno. potrzebny będzie modularny ekwipunek, umożliwiający transfer między dwoma ekwipunkami.
     public void RenderInventory(ItemStack[] stacks)
     {
         Cursor.lockState = CursorLockMode.Confined;
@@ -27,6 +31,7 @@ public class InventoryRenderer : MonoBehaviour
             for (float y = 0; y < slotCounts.y; y++)
             {
                 InventorySlot slot = Instantiate(slotPrefab, new Vector3(x * _slotDimensions.x + _areaStart.x, y * _slotDimensions.y + _areaStart.y), Quaternion.identity, panel.transform).GetComponent<InventorySlot>();
+                slot.id = c;
                 if (c < stacks.Length)
                 {
                     if (stacks[c] != null)
@@ -51,6 +56,22 @@ public class InventoryRenderer : MonoBehaviour
     private void Start()
     {
         //RenderFakeInventory();
+    }
+
+    public void ToggleTransfer(int id)
+    {
+        if(transfering)
+        {
+            to = id;
+            ClientSend.ItemTransfer(from,to);
+            transfering = false;
+        }
+        else
+        {
+            transfering = true;
+            from = id;
+        }
+
     }
 
     public void RenderFakeInventory()

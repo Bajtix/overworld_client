@@ -86,6 +86,53 @@ MonoBehaviour:
   quality:
     overrideState: 0
     value: 2
+--- !u!114 &-1607873424206529315
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 2
+  threshold:
+    overrideState: 0
+    value: 1
+  softKnee:
+    overrideState: 0
+    value: 0.5
+  clamp:
+    overrideState: 0
+    value: 65472
+  diffusion:
+    overrideState: 0
+    value: 7
+  anamorphicRatio:
+    overrideState: 0
+    value: 0
+  color:
+    overrideState: 0
+    value: {r: 1, g: 1, b: 1, a: 1}
+  fastMode:
+    overrideState: 0
+    value: 0
+  dirtTexture:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  dirtIntensity:
+    overrideState: 0
+    value: 0
 --- !u!114 &-191230166191630643
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -98,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -133,6 +180,7 @@ MonoBehaviour:
   - {fileID: 5979928291143671688}
   - {fileID: -7505703546908061140}
   - {fileID: 1726410951048736695}
+  - {fileID: -1607873424206529315}
 --- !u!114 &1726410951048736695
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -223,7 +271,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 2.8
+    value: 19.2
   tint:
     overrideState: 0
     value: 0
@@ -235,7 +283,7 @@ MonoBehaviour:
     value: 27
   saturation:
     overrideState: 1
-    value: 4.6
+    value: 6.5
   brightness:
     overrideState: 0
     value: 0
@@ -244,7 +292,7 @@ MonoBehaviour:
     value: 0.09
   contrast:
     overrideState: 1
-    value: 10.1
+    value: 15.9
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
