@@ -121,7 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!84 &1281491209
+--- !u!84 &195485459
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,7 +215,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1281491209}
+  m_TargetTexture: {fileID: 195485459}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -354,10 +354,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771586400}
-  m_LocalRotation: {x: 0.028880121, y: 0.96503526, z: 0.12069168, w: 0.23088202}
+  m_LocalRotation: {x: 0.12568247, y: -0.67844516, z: -0.7169189, w: -0.099716686}
   m_LocalPosition: {x: 0, y: 0, z: -3.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -12.686001, y: 152.36, z: 6.5610003}
+  m_LocalEulerAnglesHint: {x: 266.238, y: -223.19101, z: -335.161}

@@ -86,8 +86,8 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Scroll: 0.5
-    - _ScrollX: 9.535429
-    - _ScrollY: 4.7677145
+    - _ScrollX: 37.377296
+    - _ScrollY: 18.688648
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
