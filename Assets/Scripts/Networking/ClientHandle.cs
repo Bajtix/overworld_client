@@ -38,10 +38,12 @@ public class ClientHandle : MonoBehaviour
     {
         int _id = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
+        float _speed = _packet.ReadFloat();
 
         if (GameManager.players.TryGetValue(_id, out PlayerManager _player))
         {
             _player.destPos = _position;
+            _player.speed = _speed;
         }
     }
 

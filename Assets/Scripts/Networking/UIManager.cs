@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using RotaryHeart.Lib.SerializableDictionary;
+using UnityEngine.Audio;
+
 public class UIManager : MonoBehaviour
 {
 
@@ -29,11 +31,15 @@ public class UIManager : MonoBehaviour
     public float Sensitivity = 100f;
 
     public TMPro.TMP_Dropdown resDropdown;
+    public TMPro.TMP_Dropdown qualityDropdown;
 
     private Resolution[] resolutions;
 
     public DIRGUI guis;
     public InfoBox infoBox;
+
+    public AudioMixer settings;
+    public AnimationCurve volumeProgression;
 
     private void Awake()
     {
@@ -51,7 +57,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-
+        SetRenderDistance(3);
         resolutions = Screen.resolutions;
         
 
@@ -61,6 +67,14 @@ public class UIManager : MonoBehaviour
             l.Add(new TMPro.TMP_Dropdown.OptionData(r.width + " x " + r.height));
         }
         resDropdown.AddOptions(l);
+        List<TMPro.TMP_Dropdown.OptionData> w = new List<TMPro.TMP_Dropdown.OptionData>();
+        
+        foreach(string s in QualitySettings.names)
+        {
+            w.Add(new TMPro.TMP_Dropdown.OptionData(s));
+        }
+        qualityDropdown.options.Clear();
+        qualityDropdown.AddOptions(w);
     }
     private void Update()
     {
@@ -143,8 +157,18 @@ public class UIManager : MonoBehaviour
         Screen.SetResolution(resolutions[i].width, resolutions[i].height, false);
     }
 
+    public void SetVolume(float i)
+    {
+        settings.SetFloat("Volume", i * volumeProgression.Evaluate(i));
+    }
+
     public void ToggleFS()
     {
         Screen.fullScreen = !Screen.fullScreen;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

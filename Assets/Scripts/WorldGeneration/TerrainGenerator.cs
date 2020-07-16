@@ -62,7 +62,8 @@ public class TerrainGenerator : MonoBehaviour
 
         StartCoroutine("SpawnTrees");
         StartCoroutine("SpawnDetails");
-        StartCoroutine("SpawnGrass");
+        if (QualitySettings.GetQualityLevel() > 2)
+            StartCoroutine("SpawnGrass"); //only spawn grass on high and above
     }
 
     public IEnumerator SpawnTrees()

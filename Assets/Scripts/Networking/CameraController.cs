@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         sensitivity = UIManager.instance.Sensitivity;
-        player = transform.parent.GetComponent<PlayerManager>();
+        //player = transform.parent.GetComponent<PlayerManager>();
 
         verticalRotation = transform.localEulerAngles.x;
         horizontalRotation = player.transform.eulerAngles.y;
