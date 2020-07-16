@@ -1,24 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public List<Item> items;
+
     public Transform arm;
     public GameObject instance;
 
+    public ItemStack[] items;
+
+
     public void SelectItem(string itemname)
     {
-        if (instance != null) Destroy(instance);
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+
+        if (itemname == "none")
+            return;
 
         Item selectedItem = null;
-        foreach(Item i in items)
+        selectedItem = GameManager.instance.GetItem(itemname);
+
+        if (selectedItem == null)
         {
-            if (i.name == itemname)
-                selectedItem = i;
+            Debug.LogWarning("Selected item was null");
+            return;
         }
-        if(selectedItem == null) { Debug.LogWarning("Selected item was null"); return; }
 
         instance = Instantiate(selectedItem.model, arm);
     }

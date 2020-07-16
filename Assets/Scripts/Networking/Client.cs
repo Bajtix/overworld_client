@@ -274,7 +274,7 @@ public class Client : MonoBehaviour
                 using (Packet _packet = new Packet(_data))
                 {
                     int _packetId = _packet.ReadInt();
-                    Debug.LogWarning($"Received packet of type {_packetId}");
+                    //Debug.LogWarning($"Received packet of type {_packetId}");
                     packetHandlers[_packetId](_packet); // Call appropriate method to handle the packet
                 }
             });
@@ -306,7 +306,9 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.chunkMod, ClientHandle.ChunkMod },
             { (int)ServerPackets.time, ClientHandle.Time },
             { (int)ServerPackets.playerInfo, ClientHandle.PlayerInfo },
-            { (int)ServerPackets.openGUI, ClientHandle.OpenGUI }
+            { (int)ServerPackets.openGUI, ClientHandle.OpenGUI },
+            { (int)ServerPackets.inventory, ClientHandle.LoadInventory },
+            { (int)ServerPackets.info, ClientHandle.ShowInfoBox }
         };
         Debug.Log("Initialized packets.");
     }

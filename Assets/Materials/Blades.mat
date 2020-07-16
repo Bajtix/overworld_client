@@ -88,15 +88,15 @@ Material:
     - _TessellationFalloff: 18
     - _TessellationMaxDist: 5.1
     - _TessellationMinDist: 1.7
-    - _TessellationUniform: 16.5
+    - _TessellationUniform: 25.34
     - _TranslucentGain: 0.458
     - _UVSec: 0
     - _WindScale: 1
-    - _WindStrength: 0.12
+    - _WindStrength: 0.4
     - _ZWrite: 1
     m_Colors:
     - _BottomColor: {r: 0.08926664, g: 0.3207547, b: 0.09465009, a: 1}
     - _Color: {r: 0, g: 0.5754717, b: 0.06694827, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TopColor: {r: 0.4007818, g: 0.5, b: 0.3042453, a: 1}
-    - _WindFrequency: {r: 0.01, g: 0.05, b: 0, a: 0}
+    - _WindFrequency: {r: 0.02, g: 0.02, b: 0, a: 0}

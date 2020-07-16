@@ -25,6 +25,8 @@ public enum ServerPackets
     enemyHealth,
     playerInfo,
     openGUI,
+    inventory,
+    info,
 
     //-----------
     spawnEntity,
@@ -42,7 +44,9 @@ public enum ClientPackets
     playerMovement,
     interact,
     spawnCar,
-    menuResponse
+    menuResponse,
+    invReq,
+    invMod
 }
 
 public class Packet : IDisposable

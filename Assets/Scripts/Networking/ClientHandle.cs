@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using UnityEngine;
 
 public class ClientHandle : MonoBehaviour
@@ -76,7 +74,7 @@ public class ClientHandle : MonoBehaviour
         int _parentId = _packet.ReadInt();
         Debug.Log("new entity");
 
-        GameManager.instance.SpawnNewEntity(_id, _position,_rotation, _modelId,_parentId);
+        GameManager.instance.SpawnNewEntity(_id, _position, _rotation, _modelId, _parentId);
     }
 
     public static void EntityPosition(Packet _packet)
@@ -86,7 +84,7 @@ public class ClientHandle : MonoBehaviour
         Quaternion _rotation = _packet.ReadQuaternion();
         string _ad = _packet.ReadString();
 
-        GameManager.entities[_id].SetTargets(_position, _rotation,_ad);
+        GameManager.entities[_id].SetTargets(_position, _rotation, _ad);
     }
 
     public static void KillEntity(Packet _packet)
@@ -125,10 +123,42 @@ public class ClientHandle : MonoBehaviour
     {
         string _s = _packet.ReadString();
         bool _open = _packet.ReadBool();
-        if(_open)
+        if (_open)
+        {
             UIManager.instance.ShowGUI(_s);
+        }
         else
+        {
             UIManager.instance.HideGUI(_s);
+        }
+    }
+
+    public static void LoadInventory(Packet _packet)
+    {
+        int length = _packet.ReadInt();
+        ItemStack[] stacks = new ItemStack[length];
+        for (int i = 0; i < length; i++)
+        {
+            string itemName = _packet.ReadString();
+            int count = _packet.ReadInt();
+            //PlayerManager p = GameManager.players[Client.instance.myId];
+            if (itemName != "none")
+            {
+                stacks[i] = new ItemStack(GameManager.instance.GetItem(itemName), count);
+            }
+            else
+            {
+                stacks[i] = null;
+            }
+        }
+
+        UIManager.instance.gameObject.GetComponent<InventoryRenderer>().RenderInventory(stacks);
+    }
+
+    public static void ShowInfoBox(Packet _packet)
+    {
+        string _info = _packet.ReadString();
+        UIManager.instance.infoBox.ShowInfo(_info);
     }
 
 }

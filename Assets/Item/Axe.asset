@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3968c2f30178a364b8b488cbbdbe9622, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0184c522451432d498eab29c053d1f7d, type: 3}
   name: Axe
   description: 
   maxStackCount: 0

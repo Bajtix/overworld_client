@@ -13,11 +13,16 @@ public class PlayerManager : MonoBehaviour
 
     public Vector3 destPos;
 
+    public ItemStack[] stacks;
+
+
     public void Initialize(int _id, string _username)
     {
         id = _id;
         username = _username;
         health = maxHealth;
+        stacks = new ItemStack[40];
+        
     }
 
     private void Update()

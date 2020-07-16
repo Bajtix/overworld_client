@@ -47,7 +47,7 @@ public class RadialMenu : MonoBehaviour
     public void ShowItems()
     {
         centerOffset = referenceOffset * (Screen.width / 1920f);
-        Debug.Log("Screen width: " + Screen.width + " / 1920 = " + (referenceOffset * (Screen.width / 1920f)));
+        //Debug.Log("Screen width: " + Screen.width + " / 1920 = " + (referenceOffset * (Screen.width / 1920f)));
         float angleBetweenElements = 360f / items.Length;
         Vector3 spawnPos = new Vector3(0, 1, 0);
         foreach (RadialMenuItem i in items)

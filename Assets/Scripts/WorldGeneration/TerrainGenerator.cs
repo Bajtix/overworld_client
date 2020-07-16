@@ -72,7 +72,7 @@ public class TerrainGenerator : MonoBehaviour
         
         System.Random r = new System.Random(Mathf.RoundToInt(TerrainSettings.instance.seed + transform.position.x + transform.position.z));
 
-        float densityForChunk = Mathf.Pow(Mathf.PerlinNoise(transform.position.x * 0.000523f, transform.position.z * 0.000523f), 1.69f) * 25;
+        float densityForChunk = Mathf.Pow(Mathf.PerlinNoise(transform.position.x * 0.00523f, transform.position.z * 0.00523f), 1.69f) * 25;
 
 
         

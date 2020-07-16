@@ -265,8 +265,8 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
-  m_RenderingPath: -1
+    m_Bits: 1335
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -414,6 +414,7 @@ MonoBehaviour:
   itemCount: 0
   model: {fileID: 829117775900897876}
   destPos: {x: 0, y: 0, z: 0}
+  stacks: []
 --- !u!114 &6761221046541469059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,9 +440,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea9f78b60046d946ad07f3c2fe791b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: 7ce27fa6f2a2b0f41a6c230109688234, type: 2}
-  - {fileID: 11400000, guid: 41a4391e2c3535f4eb8405037defa242, type: 2}
-  - {fileID: 11400000, guid: c872ed9ed97d18241843d7f639b8fe98, type: 2}
   arm: {fileID: 110145106748253959}
   instance: {fileID: 0}
+  items:
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0

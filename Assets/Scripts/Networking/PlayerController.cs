@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
 
+        
+
         if (Cursor.lockState == CursorLockMode.Locked)
         {
 
@@ -37,6 +39,9 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
                 ClientSend.Interact(camTransform, KeyCode.R);
 
+            if(Input.GetKeyDown(KeyCode.I))
+                ClientSend.InventoryRequest();
+
             if (Input.GetKeyDown(KeyCode.Q))
                 ClientSend.Interact(camTransform, KeyCode.Q);
 
@@ -45,6 +50,12 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetAxis("Mouse ScrollWheel") < 0)
                 ClientSend.Interact(camTransform, KeyCode.PageDown);
+        }
+
+        if (Input.GetKeyDown(KeyCode.I) && Cursor.lockState != CursorLockMode.Locked)
+        {
+            UIManager.instance.GetComponent<InventoryRenderer>().HideInventory();
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (UIManager.instance.loadMsg.activeInHierarchy)
