@@ -15,8 +15,17 @@ Most of the systems are almost finished and it is the matter of adding new conte
 - Animation system
 
 ## Downloads
-### [Latest release](../../releases/latest)
-Full list of versions is available [here](../../releases/)
+### Client
+
+**[Latest release](https://github.com/Bajtix/overworld_client/releases/latest)**
+
+Full list of versions is available [here](https://github.com/Bajtix/overworld_client/releases/)
+
+### Server
+
+**[Latest release](https://github.com/Bajtix/overworld_server/releases/latest)**
+
+Full list of versions is available [here](https://github.com/Bajtix/overworld_server/releases/)
 
 ## Contributors
 + Bajtix - Almost Everything.
