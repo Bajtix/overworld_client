@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        camTransform = transform.Find("Camera");
+        //camTransform = transform.Find("Camera");
         UIManager.instance.loading = false;
     }
 

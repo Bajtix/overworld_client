@@ -27,6 +27,7 @@ public enum ServerPackets
     openGUI,
     inventory,
     info,
+    itemResponse,
 
     //-----------
     spawnEntity,

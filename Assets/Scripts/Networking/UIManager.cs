@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
             Destroy(this);
         }
 
-        version.text = Application.version;
+        version.text = "v" + Application.version;
     }
     private void Start()
     {

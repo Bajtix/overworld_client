@@ -538,6 +538,16 @@ ModelImporter:
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
+    - name: Boobs
+      parentName: Human0_girl
+      position: {x: -0, y: -0.16347401, z: 1.2136275}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Boobs_end
+      parentName: Boobs
+      position: {x: -0, y: 0.1, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     - name: Root
       parentName: Human0_girl
       position: {x: -0, y: 0.026754, z: 0}
@@ -711,7 +721,7 @@ ModelImporter:
     - name: index_02_r
       parentName: index_01_r
       position: {x: -0.0000033974648, y: 0.025456889, z: 0.00000089406973}
-      rotation: {x: 0.03796627, y: 0.0030339945, z: 0.0019062862, w: 0.9992726}
+      rotation: {x: 0.03796627, y: 0.0030339947, z: 0.0019062862, w: 0.99927264}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: index_03_r
       parentName: index_02_r
@@ -751,7 +761,7 @@ ModelImporter:
     - name: pinky_02_r
       parentName: pinky_01_r
       position: {x: -0.0000028133393, y: 0.021067912, z: -0.0000048786405}
-      rotation: {x: 0.037008755, y: 0.0009815394, z: 0.013196558, w: 0.9992274}
+      rotation: {x: 0.03700875, y: 0.0009815394, z: 0.013196556, w: 0.9992274}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: pinky_03_r
       parentName: pinky_02_r
@@ -771,7 +781,7 @@ ModelImporter:
     - name: ring_02_r
       parentName: ring_01_r
       position: {x: 0.0000017404556, y: 0.029406667, z: 0.0000009715558}
-      rotation: {x: 0.03321165, y: 0.0012909765, z: 0.021321809, w: 0.99922}
+      rotation: {x: 0.033211652, y: 0.0012909767, z: 0.02132181, w: 0.9992201}
       scale: {x: 0.99999994, y: 1.0000001, z: 1}
     - name: ring_03_r
       parentName: ring_02_r
@@ -786,12 +796,12 @@ ModelImporter:
     - name: thumb_01_r
       parentName: hand_r
       position: {x: -0.014226097, y: 0.038762953, z: 0.014513273}
-      rotation: {x: -0.005755844, y: 0.73142856, z: 0.35467637, w: 0.58239484}
+      rotation: {x: -0.0057558445, y: 0.7314286, z: 0.3546764, w: 0.5823949}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: thumb_02_r
       parentName: thumb_01_r
       position: {x: -0.0000024218114, y: 0.03047837, z: -0.00000047683716}
-      rotation: {x: 0.012120966, y: -0.018423585, z: -0.03133238, w: 0.9992657}
+      rotation: {x: 0.012120967, y: -0.018423587, z: -0.031332385, w: 0.99926573}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: thumb_03_r
       parentName: thumb_02_r

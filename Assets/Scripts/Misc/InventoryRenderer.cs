@@ -15,6 +15,8 @@ public class InventoryRenderer : MonoBehaviour
 
 
     private List<GameObject> allSlots;
+    
+
 
     
     //to trzeba będzie przeprojektować na pewno. potrzebny będzie modularny ekwipunek, umożliwiający transfer między dwoma ekwipunkami.

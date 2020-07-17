@@ -13,9 +13,10 @@ public class PlayerManager : MonoBehaviour
 
     public Vector3 destPos;
     public float speed = 0;
+    public int state = 0;
 
     public Animator playerAnimator;
-
+    public ItemReactor item;
     public ItemStack[] stacks;
 
 
@@ -28,11 +29,16 @@ public class PlayerManager : MonoBehaviour
         
     }
 
+   
+
     private void Update()
     {
         transform.position = Vector3.Lerp(transform.position, destPos, Time.deltaTime * 20);
-        if(playerAnimator!=null)
-        playerAnimator.SetFloat("Speed", speed);
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetFloat("Speed", speed);
+            playerAnimator.SetInteger("State", state);
+        }
     }
 
     public void SetHealth(float _health)

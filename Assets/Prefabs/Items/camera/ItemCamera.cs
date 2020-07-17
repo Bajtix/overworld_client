@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ItemCamera : MonoBehaviour
+public class ItemCamera : ItemReactor
 {
     public Camera lens;
     public RenderTexture renderTexture;
@@ -16,21 +16,20 @@ public class ItemCamera : MonoBehaviour
         
         lens.targetTexture = renderTexture;
         renderTexture.Create();
-        //screen.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", renderTexture);
         Material m = Instantiate(baseMaterial);
         m.mainTexture = renderTexture;
         
         screen.material = m;
-        Debug.LogWarning("Set Material");
     }
 
-    private void Update()
+    public override void FPSResponse(int response)
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            gameObject.SetActive(false);
-            ScreenCapture.CaptureScreenshot(Application.persistentDataPath + "/Capture" + DateTime.Now.ToString().Replace(':','-') + ".png");
-        }
+        gameObject.SetActive(false);
+        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + "/Capture" + DateTime.Now.ToString().Replace(':', '-') + ".png");
+        LeanTween.delayedCall(0.2f, () => gameObject.SetActive(true));
+        
+
     }
+    
 
 }

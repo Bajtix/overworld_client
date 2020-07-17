@@ -39,11 +39,13 @@ public class ClientHandle : MonoBehaviour
         int _id = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
         float _speed = _packet.ReadFloat();
+        int _state = _packet.ReadInt();
 
         if (GameManager.players.TryGetValue(_id, out PlayerManager _player))
         {
             _player.destPos = _position;
             _player.speed = _speed;
+            _player.state = _state;
         }
     }
 
@@ -61,7 +63,7 @@ public class ClientHandle : MonoBehaviour
     public static void PlayerDisconnected(Packet _packet)
     {
         int _id = _packet.ReadInt();
-
+        Destroy(GameManager.players[_id].GetComponent<NameRenderer>().nametag.gameObject);
         Destroy(GameManager.players[_id].gameObject);
         GameManager.players.Remove(_id);
     }
@@ -161,6 +163,16 @@ public class ClientHandle : MonoBehaviour
     {
         string _info = _packet.ReadString();
         UIManager.instance.infoBox.ShowInfo(_info);
+    }
+
+    public static void ItemResponse(Packet _packet)
+    {
+        int _player = _packet.ReadInt();
+        int _response = _packet.ReadInt();
+        if(Client.instance.myId == _player)
+            GameManager.players[_player].item.FPSResponse(_response);
+        else
+            GameManager.players[_player].item.TPSResponse(_response);
     }
 
 }

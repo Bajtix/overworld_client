@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public PlayerManager player;
     public float sensitivity = 300f;
-    public float clampAngle = 85f;
+    public float clampAngle = 75f;
 
     private float verticalRotation;
     private float horizontalRotation;
@@ -42,7 +42,10 @@ public class CameraController : MonoBehaviour
         verticalRotation = Mathf.Clamp(verticalRotation, -clampAngle, clampAngle);
 
         transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
-        player.transform.rotation = Quaternion.Euler(0f, horizontalRotation, 0f);
+        if(player.state != 1)
+            player.transform.rotation = Quaternion.Euler(0f, horizontalRotation, 0f);
+        else
+            transform.localRotation = Quaternion.Euler(verticalRotation, horizontalRotation, 0f);
     }
 
     private void ToggleCursorMode()

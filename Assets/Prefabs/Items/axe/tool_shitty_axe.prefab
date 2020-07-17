@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4840039246769226652}
   - component: {fileID: 1159623467917311845}
   - component: {fileID: 1831749197566732774}
+  - component: {fileID: 2482317734464952454}
   m_Layer: 0
   m_Name: tool_shitty_axe
   m_TagString: Untagged
@@ -100,3 +101,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2482317734464952454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588592123049724857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed41d9ba40a3154cb4b34618c1ee977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

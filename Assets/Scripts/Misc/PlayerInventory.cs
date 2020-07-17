@@ -29,5 +29,6 @@ public class PlayerInventory : MonoBehaviour
         }
 
         instance = Instantiate(selectedItem.model, arm);
+        GetComponent<PlayerManager>().item = instance.GetComponent<ItemReactor>();
     }
 }

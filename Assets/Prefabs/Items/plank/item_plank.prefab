@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8866114498933506733}
   - component: {fileID: 455358988587923611}
   - component: {fileID: 6155659816302511202}
+  - component: {fileID: -6675637962126294070}
   m_Layer: 0
   m_Name: item_plank
   m_TagString: Untagged
@@ -79,3 +80,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-6675637962126294070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571407874884219070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed41d9ba40a3154cb4b34618c1ee977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
