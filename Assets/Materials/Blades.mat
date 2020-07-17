@@ -85,10 +85,10 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TessellationFalloff: 18
+    - _TessellationFalloff: 5
     - _TessellationMaxDist: 5.1
     - _TessellationMinDist: 1.7
-    - _TessellationUniform: 25.34
+    - _TessellationUniform: 30
     - _TranslucentGain: 0.458
     - _UVSec: 0
     - _WindScale: 1

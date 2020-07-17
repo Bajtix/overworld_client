@@ -10,6 +10,8 @@ public class ItemCamera : ItemReactor
     public MeshRenderer screen;
     public Material baseMaterial;
 
+    public GameObject flash;
+
     private void Start()
     {
         renderTexture = new RenderTexture(128, 128, 8);
@@ -30,6 +32,12 @@ public class ItemCamera : ItemReactor
         
 
     }
-    
+
+    public override void TPSResponse(int response)
+    {
+        flash.SetActive(true);
+        LeanTween.delayedCall(0.1f, () => flash.SetActive(false));
+    }
+
 
 }
