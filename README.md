@@ -1,5 +1,5 @@
 # Project Overworld
-This project started as a small experiment which's goal was to create a multiplayer game. Currently, it is developed only by me with occasional help from my friends. This repository is currnently public, but I will make it private after a full release of the game. 
+This project started as a small experiment which's goal was to create a multiplayer game using the Unity game engine. Currently, it is developed only by me with occasional help from my friends. This repository is currnently public, but I will make it private after a full release of the game. 
 
 ## The Idea
 My goal is to create a open-world sandbox multiplayer, focused on the progression of the player (you start with nothing, then develop more and more advanced tools). Everything is kept in kind of Cyberpunk -ish style (Futuristic technology, but with retro styling and punk rock and synthwave music). In the lategame, players will be able to build massive factories and flying cities.
