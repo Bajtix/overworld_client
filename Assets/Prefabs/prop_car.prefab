@@ -145,10 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updatePos: 1
-  id: 0
-  modelId: 1
-  parentId: 0
-  additionalData: 
+  smoothingSpeed: 40
 --- !u!82 &6576820592067213859
 AudioSource:
   m_ObjectHideFlags: 0

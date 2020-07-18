@@ -157,10 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updatePos: 1
-  id: 0
-  modelId: 
-  parentId: 0
-  additionalData: 
+  smoothingSpeed: 30
 --- !u!1 &3783297752220412927
 GameObject:
   m_ObjectHideFlags: 0

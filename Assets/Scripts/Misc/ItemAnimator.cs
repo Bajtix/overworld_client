@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemAnimator : MonoBehaviour
+public class ItemAnimator : ItemReactor
 {
     public Animator item;
     private void Update()

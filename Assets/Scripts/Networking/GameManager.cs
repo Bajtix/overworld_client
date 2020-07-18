@@ -35,7 +35,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Gets an Item by name from the GameManager's item registry.
+    /// </summary>
+    /// <param name="name">The name of the item</param>
+    /// <returns>Returns the found Item if it exists, othervise returns null.</returns>
     public Item GetItem(string name)
     {
         foreach (Item i in items)
@@ -63,7 +67,14 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<PlayerManager>().Initialize(_id, _username);
         players.Add(_id, _player.GetComponent<PlayerManager>());
     }
-
+    /// <summary>
+    /// Spawns new entity into the world.
+    /// </summary>
+    /// <param name="id">New entity's ID</param>
+    /// <param name="position">New entity's position</param>
+    /// <param name="rotation">New entity's rotation</param>
+    /// <param name="modelId"> The entity to spawn </param>
+    /// <param name="parentId">New entity's parent id (-9999 if none) </param>
     public void SpawnNewEntity(int id, Vector3 position, Quaternion rotation, string modelId, int parentId)
     {
         Entity _entity;
@@ -77,27 +88,37 @@ public class GameManager : MonoBehaviour
         entities.Add(id, _entity);
     }
 
+    /// <summary>
+    /// Kills an entity.
+    /// </summary>
+    /// <param name="id">Id of the entity to kill</param>
     public void KillEntity(int id)
     {
         Destroy(entities[id].gameObject);
         entities.Remove(id);
     }
 
-    public void ModChunk(ChunkMod c)
+    /// <summary>
+    /// Mods a chunk. 
+    /// </summary>
+    /// <param name="mod">Chunk to mod</param>
+    public void ModChunk(ChunkMod mod)
     {
-        Debug.Log("Mod chunk received.");
-        if (c.type == ChunkMod.ChunkModType.Add)
+        bufferedChunkMods.Add(mod);
+        /// Creates a new GameObject and parents it to a corresponding chunk, obtained by checking the chunk array.
+        if (mod.type == ChunkMod.ChunkModType.Add)
         {
-            ChunkManager.V2Int v = ChunkManager.ChunkAt(c.chunk.x, c.chunk.z);
-            GameObject w = ChunkManager.instance.chunks[v.x, v.y];
-            GameObject g = Instantiate(terrainObjectPrefabs[c.modelId],c.chunk,Quaternion.identity,w.transform);
-            w.GetComponent<TerrainGenerator>().AddFeature(g);
+            ChunkManager.V2Int chunkPosition = ChunkManager.ChunkAt(mod.chunk.x, mod.chunk.z);
+            GameObject targetChunk = ChunkManager.instance.chunks[chunkPosition.x, chunkPosition.y];
+            GameObject newObject = Instantiate(terrainObjectPrefabs[mod.modelId],mod.chunk,Quaternion.identity,targetChunk.transform);
+            targetChunk.GetComponent<TerrainGenerator>().AddFeature(newObject);
         }
-        else
+        /// Destroys a GameObject found by id on a chunk obtained from the chunk array.
+        else if (mod.type == ChunkMod.ChunkModType.Remove)
         {
-            ChunkManager.V2Int v = ChunkManager.ChunkAt(c.chunk.x, c.chunk.z);
-            GameObject w = ChunkManager.instance.chunks[v.x, v.y];
-            w.GetComponent<TerrainGenerator>().RemoveFeature(c.objectId);
+            ChunkManager.V2Int chunkPosition = ChunkManager.ChunkAt(mod.chunk.x, mod.chunk.z);
+            GameObject targetChunk = ChunkManager.instance.chunks[chunkPosition.x, chunkPosition.y];
+            targetChunk.GetComponent<TerrainGenerator>().RemoveFeature(mod.objectId);
         }
     }
     

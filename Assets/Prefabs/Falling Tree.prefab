@@ -45,10 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updatePos: 1
-  id: 0
-  modelId: prp_fallingtree
-  parentId: -1
-  additionalData: 
+  smoothingSpeed: 30
 --- !u!114 &7524261000794924912
 MonoBehaviour:
   m_ObjectHideFlags: 0

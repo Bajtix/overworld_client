@@ -170,10 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updatePos: 1
-  id: 0
-  modelId: 8
-  parentId: 0
-  additionalData: 0
+  smoothingSpeed: 200
 --- !u!114 &6810220144523136397
 MonoBehaviour:
   m_ObjectHideFlags: 0
