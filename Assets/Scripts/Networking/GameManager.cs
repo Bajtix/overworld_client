@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public static Dictionary<int, PlayerManager> players = new Dictionary<int, PlayerManager>();
     public static Dictionary<int, Entity> entities = new Dictionary<int, Entity>();
 
-    public static List<ChunkMod> bufferedChunkMods = new List<ChunkMod>();
+    
 
     public GameObject localPlayerPrefab;
     public GameObject playerPrefab;
@@ -104,20 +104,18 @@ public class GameManager : MonoBehaviour
     /// <param name="mod">Chunk to mod</param>
     public void ModChunk(ChunkMod mod)
     {
-        bufferedChunkMods.Add(mod);
+        ChunkManager.V2Int chunkPosition = ChunkManager.ChunkAt(mod.chunk.x, mod.chunk.z);
+        GameObject targetChunk = ChunkManager.instance.chunks[chunkPosition.x, chunkPosition.y];
+        ChunkManager.bufferedChunkMods[chunkPosition.x, chunkPosition.y].Add(mod);
         /// Creates a new GameObject and parents it to a corresponding chunk, obtained by checking the chunk array.
         if (mod.type == ChunkMod.ChunkModType.Add)
-        {
-            ChunkManager.V2Int chunkPosition = ChunkManager.ChunkAt(mod.chunk.x, mod.chunk.z);
-            GameObject targetChunk = ChunkManager.instance.chunks[chunkPosition.x, chunkPosition.y];
+        {            
             GameObject newObject = Instantiate(terrainObjectPrefabs[mod.modelId],mod.chunk,Quaternion.identity,targetChunk.transform);
             targetChunk.GetComponent<TerrainGenerator>().AddFeature(newObject);
         }
         /// Destroys a GameObject found by id on a chunk obtained from the chunk array.
         else if (mod.type == ChunkMod.ChunkModType.Remove)
-        {
-            ChunkManager.V2Int chunkPosition = ChunkManager.ChunkAt(mod.chunk.x, mod.chunk.z);
-            GameObject targetChunk = ChunkManager.instance.chunks[chunkPosition.x, chunkPosition.y];
+        {           
             targetChunk.GetComponent<TerrainGenerator>().RemoveFeature(mod.objectId);
         }
     }

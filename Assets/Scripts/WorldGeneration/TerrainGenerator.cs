@@ -15,7 +15,7 @@ public class TerrainGenerator : MonoBehaviour
     public GameObject lowLodV;
     public Dictionary<int, ChunkObject> objects;
 
-    
+    public ChunkManager.V2Int chunkCoords;
 
     private void Start()
     {
@@ -72,6 +72,7 @@ public class TerrainGenerator : MonoBehaviour
 
         StartCoroutine("SpawnTrees");
         StartCoroutine("SpawnDetails");
+        StartCoroutine("ApplyChunkMods");
         if (QualitySettings.GetQualityLevel() > 2)
         {
             StartCoroutine("SpawnGrass"); //only spawn grass on high and above
@@ -220,6 +221,25 @@ public class TerrainGenerator : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/filelog.txt", pixelLog);
 
         GetComponent<MeshRenderer>().material.SetTexture("_SplatMap", normals_tx);
+    }
+
+    public IEnumerator ApplyChunkMods()
+    {
+        List<ChunkMod> mods = ChunkManager.bufferedChunkMods[chunkCoords.x, chunkCoords.y];
+        foreach (ChunkMod mod in mods)
+        {
+            if (mod.type == ChunkMod.ChunkModType.Add)
+            {
+                GameObject newObject = Instantiate(GameManager.instance.terrainObjectPrefabs[mod.modelId], mod.chunk, Quaternion.identity, targetChunk.transform);
+                AddFeature(newObject);
+            }
+            /// Destroys a GameObject found by id on a chunk obtained from the chunk array.
+            else if (mod.type == ChunkMod.ChunkModType.Remove)
+            {
+                RemoveFeature(mod.objectId);
+            }
+            yield return null;
+        }
     }
 
     private float GetPass(float x, float z, float scale, float mult)

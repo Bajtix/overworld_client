@@ -7183,7 +7183,6 @@ MonoBehaviour:
   - {fileID: 5895272235126195679, guid: df8f762b6267e2847a92ce73129834e5, type: 3}
   detailPrefabs:
   - {fileID: 8193865774484726770, guid: 99c80dbb08ff5454396114f46758cab7, type: 3}
-  - {fileID: 5845062237919861825, guid: a9fac94ab8e960d49b19cd45a412c64c, type: 3}
   renderDistance: 1
 --- !u!114 &761847844
 MonoBehaviour:

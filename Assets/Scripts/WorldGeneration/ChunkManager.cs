@@ -9,6 +9,8 @@ public class ChunkManager : MonoBehaviour
     public GameObject terrainPrefab;
     public int chunkCount;
     public GameObject[,] chunks;
+    public static List<ChunkMod>[,] bufferedChunkMods;
+
 
     private void Awake()
     {
@@ -20,12 +22,14 @@ public class ChunkManager : MonoBehaviour
         }
 
         chunks = new GameObject[6900, 6900];
+        bufferedChunkMods = new List<ChunkMod>[6900, 6900];
 
         for (int i = 0; i < 6900; i++)
         {
             for (int j = 0; j < 6900; j++)
             {
-                chunks[i, j] = null;                           
+                chunks[i, j] = null;
+                bufferedChunkMods[i, j] = new List<ChunkMod>();
             }
         }
     }
@@ -57,7 +61,8 @@ public class ChunkManager : MonoBehaviour
         if (chunks[x, y] == null)
         {
             chunkCount++;
-            chunks[x, y] = Instantiate(terrainPrefab, new Vector3(x * 40, 0, y * 40), Quaternion.identity);            
+            chunks[x, y] = Instantiate(terrainPrefab, new Vector3(x * 40, 0, y * 40), Quaternion.identity);
+            chunks[x, y].GetComponent<TerrainGenerator>().chunkCoords = new V2Int(x, y);
         }
     }
 
