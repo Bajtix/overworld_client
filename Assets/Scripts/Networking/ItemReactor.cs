@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemReactor : MonoBehaviour
 {
-
+    public Transform handTransform;
     public virtual void FPSResponse(int response)
     {
 

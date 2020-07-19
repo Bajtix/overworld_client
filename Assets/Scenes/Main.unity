@@ -9341,7 +9341,7 @@ MonoBehaviour:
   loading: 0
   Sensitivity: 100
   resDropdown: {fileID: 1633439568}
-  qualityDropdown: {fileID: 0}
+  qualityDropdown: {fileID: 424361845}
   guis:
     reorderableList:
       canAdd: 1

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Transform camTransform;
+    //public Transform handTarget;
 
     private void Start()
     {
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
+
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             Client.instance.Disconnect();

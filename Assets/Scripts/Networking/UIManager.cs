@@ -73,8 +73,11 @@ public class UIManager : MonoBehaviour
         {
             w.Add(new TMPro.TMP_Dropdown.OptionData(s));
         }
+        if(qualityDropdown.options != null)
         qualityDropdown.options.Clear();
         qualityDropdown.AddOptions(w);
+
+        qualityDropdown.value = QualitySettings.GetQualityLevel();
     }
     private void Update()
     {
