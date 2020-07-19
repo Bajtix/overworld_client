@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blades
+  m_Name: MenuGrass
   m_Shader: {fileID: 4800000, guid: ac0ee96bbb09c3a4b80753a348dfa4b9, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

@@ -9341,7 +9341,7 @@ MonoBehaviour:
   loading: 0
   Sensitivity: 100
   resDropdown: {fileID: 1633439568}
-  qualityDropdown: {fileID: 424361845}
+  qualityDropdown: {fileID: 0}
   guis:
     reorderableList:
       canAdd: 1
@@ -9375,46 +9375,10 @@ MonoBehaviour:
     - {fileID: 71421468}
     - {fileID: 1467834651}
   infoBox: {fileID: 1034940002}
-  settings: {fileID: 24100000, guid: f06349b96071c354dbce8cd79873e055, type: 2}
+  settings: {fileID: 0}
   volumeProgression:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.05813001
-      value: 0.65007275
-      inSlope: 0.48407406
-      outSlope: 0.48407406
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.2766849
-      value: 0.7558695
-      inSlope: 0.30660015
-      outSlope: 0.30660015
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5810366
-      value: 0.7951693
-      inSlope: -0.01501853
-      outSlope: -0.01501853
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.98123074
-      value: 0.7314731
-      inSlope: -0.21189374
-      outSlope: -0.21189374
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.139241
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -16477,8 +16441,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -39.47, y: -8.12}
-  m_SizeDelta: {x: 78.927246, y: 16.674072}
+  m_AnchoredPosition: {x: -99.07, y: -20.55}
+  m_SizeDelta: {x: 198.13074, y: 41.543823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692338126
 MonoBehaviour:
@@ -16540,8 +16504,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 37.5
+  m_fontSizeBase: 37.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -230,7 +230,7 @@ public class TerrainGenerator : MonoBehaviour
         {
             if (mod.type == ChunkMod.ChunkModType.Add)
             {
-                GameObject newObject = Instantiate(GameManager.instance.terrainObjectPrefabs[mod.modelId], mod.chunk, Quaternion.identity, targetChunk.transform);
+                GameObject newObject = Instantiate(GameManager.instance.terrainObjectPrefabs[mod.modelId], mod.chunk, Quaternion.identity, transform);
                 AddFeature(newObject);
             }
             /// Destroys a GameObject found by id on a chunk obtained from the chunk array.
