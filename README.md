@@ -1,5 +1,5 @@
 # Project Overworld
-This project started as a small experiment which's goal was to create a multiplayer game using the Unity game engine. Currently, it is developed only by me with occasional help from my friends. This repository is currnently public, but I will make it private after a full release of the game. 
+This project started as a small experiment which's goal was to create a multiplayer game using the Unity game engine. Currently, it is developed only by me with original music by @REafiki and occasional help from my friends. This repository is currnently public, but I will make it private after a full release of the game. 
 
 ## [  Check out the Server repo](https://github.com/Bajtix/overworld_server)
 
