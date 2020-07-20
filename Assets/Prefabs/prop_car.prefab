@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updatePos: 1
-  smoothingSpeed: 40
+  smoothingSpeed: 20
 --- !u!82 &6576820592067213859
 AudioSource:
   m_ObjectHideFlags: 0
