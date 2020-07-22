@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a25caa8ab345e14c95c4a02142fce14
+guid: 012a7abe888e95b499a54dc5ff78dab3
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,13 +11,13 @@ ScriptedImporter:
   version: 25
   projectContext: 0
   mGraphInstanceData:
-  - graphLabel: Grass
-    prototypeName: Grass
+  - graphLabel: Wood
+    prototypeName: Wood
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://Grass\" label=\"\" >\n  <presetinput identifier=\"$randomseed\"
-      uid=\"2649336239\" type=\"4\" value=\"700\" />\n </sbspreset>\n"
+    preset: " <sbspreset pkgurl=\"pkg://Wood\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"798981873\" type=\"8\" value=\"9,9\" />\n </sbspreset>\n"
     shaderName: Standard
     materialProperties:
       shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
@@ -25,7 +25,7 @@ ScriptedImporter:
       lightmapFlags: 4
       texEnvs:
       - name: _BumpMap
-        texture: {fileID: 3659445971192475515, guid: 4a25caa8ab345e14c95c4a02142fce14,
+        texture: {fileID: -8198457143531149546, guid: 012a7abe888e95b499a54dc5ff78dab3,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -43,25 +43,25 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       - name: _EmissionMap
         texture: {instanceID: 0}
-        scale: {x: 10, y: 10}
+        scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: -3445902180689000385, guid: 4a25caa8ab345e14c95c4a02142fce14,
+        texture: {fileID: -1099120663972307904, guid: 012a7abe888e95b499a54dc5ff78dab3,
           type: 3}
-        scale: {x: 10, y: 10}
+        scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: -5954771927889502784, guid: 4a25caa8ab345e14c95c4a02142fce14,
+        texture: {fileID: 3679641811352935658, guid: 012a7abe888e95b499a54dc5ff78dab3,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
-        texture: {fileID: 7456285904108322170, guid: 4a25caa8ab345e14c95c4a02142fce14,
+        texture: {fileID: -6997472378058007970, guid: 012a7abe888e95b499a54dc5ff78dab3,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _ParallaxMap
-        texture: {fileID: -8042641701371684872, guid: 4a25caa8ab345e14c95c4a02142fce14,
+        texture: {fileID: -1211959321513777420, guid: 012a7abe888e95b499a54dc5ff78dab3,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -190,27 +190,27 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Grass - baseColor
+    - textureName: Wood - baseColor
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Grass - normal
+    - textureName: Wood - normal
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Grass - roughness
+    - textureName: Wood - roughness
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Grass - metallic
+    - textureName: Wood - metallic
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Grass - height
+    - textureName: Wood - height
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Grass - ambientOcclusion
+    - textureName: Wood - ambientOcclusion
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -220,16 +220,16 @@ ScriptedImporter:
     - label: Default
       bOverride: 0
       bLockRatio: 1
-      textureWidth: 16384
-      textureHeight: 16384
+      textureWidth: 512
+      textureHeight: 512
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
-    material: {fileID: -3035101939719975992, guid: 4a25caa8ab345e14c95c4a02142fce14,
+    material: {fileID: -1444460858095362738, guid: 012a7abe888e95b499a54dc5ff78dab3,
       type: 3}
     generatedTextures:
-    - {fileID: -3445902180689000385, guid: 4a25caa8ab345e14c95c4a02142fce14, type: 3}
-    - {fileID: 3659445971192475515, guid: 4a25caa8ab345e14c95c4a02142fce14, type: 3}
-    - {fileID: -5954771927889502784, guid: 4a25caa8ab345e14c95c4a02142fce14, type: 3}
-    - {fileID: -8042641701371684872, guid: 4a25caa8ab345e14c95c4a02142fce14, type: 3}
-    - {fileID: 7456285904108322170, guid: 4a25caa8ab345e14c95c4a02142fce14, type: 3}
+    - {fileID: -1099120663972307904, guid: 012a7abe888e95b499a54dc5ff78dab3, type: 3}
+    - {fileID: -8198457143531149546, guid: 012a7abe888e95b499a54dc5ff78dab3, type: 3}
+    - {fileID: 3679641811352935658, guid: 012a7abe888e95b499a54dc5ff78dab3, type: 3}
+    - {fileID: -1211959321513777420, guid: 012a7abe888e95b499a54dc5ff78dab3, type: 3}
+    - {fileID: -6997472378058007970, guid: 012a7abe888e95b499a54dc5ff78dab3, type: 3}
