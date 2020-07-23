@@ -744,6 +744,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - label: Tilted Wall Window
+    icon: {fileID: 21300002, guid: cea2c9bf87b0c4dfdafb697a3ff00959, type: 3}
+    call:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 71421473}
+          m_MethodName: SendChosenOption
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 8
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   prefab: {fileID: 5249584900012171869, guid: 786ba4e75dc617d4eac7366dc58bce12, type: 3}
   canvas: {fileID: 1034939994}
   text: {fileID: 1125562677}
@@ -1721,7 +1737,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.9957798, b: 0.8066038, a: 1}
-  m_Intensity: 2.82
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1778,7 +1794,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
   m_LocalRotation: {x: 0.47522652, y: -0.2746017, z: 0.15901779, w: 0.8206504}
-  m_LocalPosition: {x: -2.35, y: 3, z: -1.93}
+  m_LocalPosition: {x: 54, y: 93.3, z: 110.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7132,6 +7148,7 @@ MonoBehaviour:
     - prp_container
     - prp_fallingtree
     - bld_stairs_u
+    - bld_wall_tilted_window
     _keys:
     - prp_present
     - vec_rusty-buggy
@@ -7148,6 +7165,7 @@ MonoBehaviour:
     - prp_container
     - prp_fallingtree
     - bld_stairs_u
+    - bld_wall_tilted_window
     _values:
     - {fileID: 283212582744607429, guid: 2660f404a7ef68245b4b7a735c3637af, type: 3}
     - {fileID: 971075604509001816, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb, type: 3}
@@ -7164,6 +7182,7 @@ MonoBehaviour:
     - {fileID: 1999780169847594332, guid: e7f495dbb2dcc494f9d1f5e3a63c9fc0, type: 3}
     - {fileID: 4075377266881128163, guid: 527d2a097e6a6c64c82e55eb1abb8669, type: 3}
     - {fileID: 732705214985600464, guid: be6ac01a66c498646963ad9d85f48c12, type: 3}
+    - {fileID: 6735167144029711499, guid: 68710ba4524a5664ea25331188e566e3, type: 3}
   terrainObjectPrefabs: []
   items:
   - {fileID: 11400000, guid: c872ed9ed97d18241843d7f639b8fe98, type: 2}
