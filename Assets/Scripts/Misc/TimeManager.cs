@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class TimeManager : MonoBehaviour
     public static TimeManager instance;
     public Material clouds;
     public GameObject sun;
-
+    public long time;
 
     private Vector2 scroll = Vector2.zero;
     private void Awake()
@@ -16,9 +17,11 @@ public class TimeManager : MonoBehaviour
         instance = this;
     }
 
-    public void SetWorldTime(float time, float cloudDensity)
+    public void SetWorldTime(long time, float cloudDensity)
     {
         clouds.SetFloat("_Cutoff", cloudDensity);
+        this.time = time;
+        GameManager.worldTime = time; // change this to self time later
 
         //sun.transform.rotation = Quaternion.Euler(15 * time - 90, 0, 0);
 

@@ -109,7 +109,7 @@ public class ClientHandle : MonoBehaviour
 
     public static void Time(Packet _packet)
     {
-        float _time = _packet.ReadFloat();
+        long _time = _packet.ReadLong();
         float _clouds = _packet.ReadFloat();
 
         TimeManager.instance.SetWorldTime(_time, _clouds);

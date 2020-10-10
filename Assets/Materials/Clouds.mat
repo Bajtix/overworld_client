@@ -88,6 +88,10 @@ Material:
     - _Scroll: 0.5
     - _ScrollX: 96.554886
     - _ScrollY: 48.277443
+    - _ScrollX: 96.554886
+    - _ScrollY: 48.277443
+    - _ScrollX: 359.79276
+    - _ScrollY: 179.89638
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1

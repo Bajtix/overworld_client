@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] terrainObjectPrefabs;
     public List<Item> items;
 
+    public static long worldTime = 0;
+
     private void Awake()
     {
         if (instance == null)
