@@ -27,7 +27,6 @@ public class CarController : MonoBehaviour
             float Vel = -transform.InverseTransformDirection(rb.velocity).z;
             if ((Vel * Input.GetAxis("Vertical")) < 0f)
             {
-                Debug.Log($"Brake. {Vel} * {Input.GetAxis("Vertical")}");
                 wheel.brakeTorque = brake;
             }
             else

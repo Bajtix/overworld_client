@@ -41,16 +41,12 @@ public class RadioStation : ScriptableObject
             CalculateLength();
 
         float runningTime = time % Mathf.RoundToInt(radioLength);
-        Debug.Log("Running time: " + runningTime);
-        //RadioTrack last = null;
         int index = 0;
         while (runningTime >= radioTracks[index].audioClip.length)
         {
             runningTime -= radioTracks[index].audioClip.length;
-            Debug.Log("Skipping track: " + radioTracks[index].trackName + "; Running time:" + runningTime) ;
             index++;
         }
-        Debug.Log("Finished with track " + radioTracks[index].trackName + "with index " + index + " and time " + runningTime);
         return new TrackData(radioTracks[index],runningTime);
     }
 }

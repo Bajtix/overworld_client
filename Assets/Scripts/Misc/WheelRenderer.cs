@@ -22,10 +22,12 @@ public class WheelRenderer : MonoBehaviour
     }
     private void Update()
     {
-        string[] n = carEntity.additionalData.Split(':');
-        steerAngle = float.Parse(n[0]);
-        float motorAnglew = float.Parse(n[1]);
-        bool playerIn = bool.Parse(n[2]);
+        string[] eData = carEntity.additionalData.Split(':');
+        if (eData.Length != 3) return;
+        
+        steerAngle = float.Parse(eData[0]);
+        float motorAnglew = float.Parse(eData[1]);
+        bool playerIn = bool.Parse(eData[2]);
         if (playerIn)
         {
             foreach (GameObject o in particles)
