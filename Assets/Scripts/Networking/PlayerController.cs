@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
 
             f1 = !f1;
+
+            UIManager.instance.cmd.consolePanel.SetActive(f1);
         }
 
         if (f1) return;
