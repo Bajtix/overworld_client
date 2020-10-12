@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour
     public AudioMixer settings;
     public AnimationCurve volumeProgression;
 
+    public Console cmd;
     private void Awake()
     {
         if (instance == null)

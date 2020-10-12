@@ -35,7 +35,8 @@ public enum ServerPackets
     killEntity,
     chunkMod,
     //-----------
-    time
+    time,
+    consoleMessage
 }
 
 /// <summary>Sent from client to server.</summary>
@@ -47,7 +48,8 @@ public enum ClientPackets
     spawnCar,
     menuResponse,
     invReq,
-    invMod
+    invMod,
+    luaCmd
 }
 
 public class Packet : IDisposable

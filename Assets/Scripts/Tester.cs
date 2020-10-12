@@ -13,7 +13,7 @@ public class Tester : MonoBehaviour
     public AudioSource source;
     private void Update()
     {
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.LeftControl))
             gameObject.SetActive(false);
 
         /*RadioStation.TrackData data = r.GetTrackAtTime(time);

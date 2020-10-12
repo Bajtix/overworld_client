@@ -99,6 +99,15 @@ public class ClientSend : MonoBehaviour
             SendTCPData(_packet);
         }
     }
+
+    public static void ConsoleCommand(string cmd)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.luaCmd))
+        {
+            _packet.Write(cmd);
+            SendTCPData(_packet);
+        }
+    }
     
     #endregion
 }

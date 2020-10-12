@@ -175,4 +175,11 @@ public class ClientHandle : MonoBehaviour
             GameManager.players[_player].item.TPSResponse(_response);
     }
 
+    public static void ConsoleMessage(Packet packet)
+    {
+        string msg = packet.ReadString();
+
+        UIManager.instance.cmd.ReceivedText(msg);
+    }
+
 }

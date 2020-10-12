@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Transform camTransform;
     //public Transform handTarget;
-
+    public bool f1 = false;
     private void Start()
     {
         //camTransform = transform.Find("Camera");
@@ -16,7 +16,17 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            if (Cursor.lockState == CursorLockMode.Locked)
+                Cursor.lockState = CursorLockMode.None;
+            else
+                Cursor.lockState = CursorLockMode.Locked;
 
+            f1 = !f1;
+        }
+
+        if (f1) return;
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             Client.instance.Disconnect();
@@ -76,6 +86,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         ChunkManagement();      
+        if(!f1)
         SendInputToServer();
     }
 
