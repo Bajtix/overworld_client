@@ -49,7 +49,7 @@ public enum ClientPackets
     menuResponse,
     invReq,
     invMod,
-    luaCmd
+    consoleCmd
 }
 
 public class Packet : IDisposable

@@ -102,7 +102,7 @@ public class ClientSend : MonoBehaviour
 
     public static void ConsoleCommand(string cmd)
     {
-        using (Packet _packet = new Packet((int)ClientPackets.luaCmd))
+        using (Packet _packet = new Packet((int)ClientPackets.consoleCmd))
         {
             _packet.Write(cmd);
             SendTCPData(_packet);
