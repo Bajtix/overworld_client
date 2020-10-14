@@ -49,7 +49,8 @@ public enum ClientPackets
     menuResponse,
     invReq,
     invMod,
-    consoleCmd
+    consoleCmd,
+    inputString
 }
 
 public class Packet : IDisposable

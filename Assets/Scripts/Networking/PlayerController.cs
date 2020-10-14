@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
         if (Cursor.lockState == CursorLockMode.Locked)
         {
 
+            ClientSend.InputString();
+
             if (Input.GetKeyDown(KeyCode.E))
                 ClientSend.Interact(camTransform, KeyCode.E);
 
