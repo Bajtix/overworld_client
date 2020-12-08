@@ -109,14 +109,6 @@ public class ClientSend : MonoBehaviour
         }
     }
 
-    public static void InputString()
-    {
-        using(Packet _packet = new Packet((int)ClientPackets.inputString))
-        {
-            _packet.Write(Input.inputString);
-            SendTCPData(_packet);
-        }
-    }
     
     #endregion
 }
