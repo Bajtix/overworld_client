@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
             _entity = Instantiate(entityPrefabs[modelId], position, rotation, GameManager.entities[parentId].transform).GetComponent<Entity>();
 
         _entity.Initialize(id,modelId,parentId);
-        _entity.SetTargets(position, Quaternion.identity,"");
+        _entity.SetTargets(position, Quaternion.identity,"",null);
         entities.Add(id, _entity);
     }
 

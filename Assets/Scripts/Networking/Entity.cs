@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
     public int parentId;
     [System.NonSerialized]
     public string additionalData;
+    public object additionalDataObject;
 
     private Quaternion destRot;
     private Vector3 destPos;
@@ -37,11 +38,12 @@ public class Entity : MonoBehaviour
     /// <param name="position">The position data of the entity</param>
     /// <param name="rotation">The rotation data of the entity</param>
     /// <param name="additionalData">The additional data of the entity</param>
-    public void SetTargets(Vector3 position, Quaternion rotation, string additionalData)
+    public void SetTargets(Vector3 position, Quaternion rotation, string additionalData, object additionalDataObject)
     {
         destPos = position;
         destRot = rotation;
         this.additionalData = additionalData;
+        this.additionalDataObject = additionalDataObject;
     }
 
     private void Update()

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using UnityEngine;
 
@@ -86,6 +88,42 @@ public class Packet : IDisposable
     }
 
     #region Functions
+
+
+    /// <summary>
+    /// Converts given object to byte[]
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns>Serializable object to convert</returns>
+    private byte[] ObjectToByteArray(object obj)
+    {
+        if (obj == null)
+            return null;
+
+        BinaryFormatter bf = new BinaryFormatter();
+        using (MemoryStream ms = new MemoryStream())
+        {
+            bf.Serialize(ms, obj);
+            return ms.ToArray();
+        }
+    }
+
+    /// <summary>
+    /// Converts byte[] to object
+    /// </summary>
+    /// <param name="arrBytes">The array to convert</param>
+    /// <returns></returns>
+    private object ByteArrayToObject(byte[] arrBytes)
+    {
+        MemoryStream memStream = new MemoryStream();
+        BinaryFormatter binForm = new BinaryFormatter();
+        memStream.Write(arrBytes, 0, arrBytes.Length);
+        memStream.Seek(0, SeekOrigin.Begin);
+        object obj = (object)binForm.Deserialize(memStream);
+
+        return obj;
+    }
+
     /// <summary>Sets the packet's content and prepares it to be read.</summary>
     /// <param name="_data">The bytes to add to the packet.</param>
     public void SetBytes(byte[] _data)
@@ -150,6 +188,19 @@ public class Packet : IDisposable
     {
         buffer.Add(_value);
     }
+
+    public void WriteObject(object obj)
+    {
+        if (obj != null)
+        {
+            byte[] o = ObjectToByteArray(obj);
+            Write(o.Length);
+            Write(o);
+        }
+        else
+            Write(0);
+    }
+
     /// <summary>Adds an array of bytes to the packet.</summary>
     /// <param name="_value">The byte array to add.</param>
     public void Write(byte[] _value)
@@ -213,6 +264,20 @@ public class Packet : IDisposable
     #endregion
 
     #region Read Data
+
+
+    public object ReadObject(bool _moveReadPos = true)
+    {
+        int l = ReadInt(_moveReadPos);
+        if(l==0)
+        {
+            return null;
+        }
+        byte[] b = ReadBytes(l, _moveReadPos);
+
+        return ByteArrayToObject(b);
+    }
+
     /// <summary>Reads a byte from the packet.</summary>
     /// <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
     public byte ReadByte(bool _moveReadPos = true)

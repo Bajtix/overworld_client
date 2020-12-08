@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,14 +21,19 @@ public class WheelRenderer : MonoBehaviour
     {
         basePos = transform.localPosition;
     }
+
+    
+
     private void Update()
     {
-        string[] eData = carEntity.additionalData.Split(':');
-        if (eData.Length != 3) return;
+
+        if (carEntity.additionalDataObject == null) return;
+        var cdata = (CarController.CarData)carEntity.additionalDataObject;
         
-        steerAngle = float.Parse(eData[0]);
-        float motorAnglew = float.Parse(eData[1]);
-        bool playerIn = bool.Parse(eData[2]);
+        steerAngle = cdata.steerAngle;
+        float motorAnglew = cdata.rpm;
+        bool playerIn = cdata.steered;
+
         if (playerIn)
         {
             foreach (GameObject o in particles)

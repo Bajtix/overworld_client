@@ -87,8 +87,9 @@ public class ClientHandle : MonoBehaviour
         Vector3 _position = _packet.ReadVector3();
         Quaternion _rotation = _packet.ReadQuaternion();
         string _ad = _packet.ReadString();
+        object _adob = _packet.ReadObject();
 
-        GameManager.entities[_id].SetTargets(_position, _rotation, _ad);
+        GameManager.entities[_id].SetTargets(_position, _rotation, _ad,_adob);
     }
 
     public static void KillEntity(Packet _packet)
