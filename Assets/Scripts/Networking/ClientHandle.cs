@@ -38,7 +38,7 @@ public class ClientHandle : MonoBehaviour
     {
         int _id = _packet.ReadInt();
         Vector3 _position = _packet.ReadVector3();
-        float _speed = _packet.ReadFloat();
+        Vector3 _speed = _packet.ReadVector3();
         int _state = _packet.ReadInt();
 
         if (GameManager.players.TryGetValue(_id, out PlayerManager _player))

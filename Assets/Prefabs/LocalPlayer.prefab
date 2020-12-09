@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216671765702079134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.064, z: 0.126}
+  m_LocalPosition: {x: 0, y: 0.0309, z: 0.1188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7328223800674908747}
@@ -461,8 +461,9 @@ MonoBehaviour:
   itemCount: 0
   model: {fileID: 829117775900897876}
   destPos: {x: 0, y: 0, z: 0}
-  speed: 0
+  speed: {x: 0, y: 0, z: 0}
   state: 0
+  lerpSpeed: 20
   playerAnimator: {fileID: 3587348796006447353}
   item: {fileID: 0}
   stacks: []

@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
 
     [HideInInspector]
     public Vector3 destPos;
-    public float speed = 0;
+    public Vector3 speed = Vector3.zero;
     public int state = 0;
     public float lerpSpeed = 20;
 
@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, destPos, Time.deltaTime * lerpSpeed);
         if (playerAnimator != null)
         {
-            playerAnimator.SetFloat("Speed", speed);
+            playerAnimator.SetFloat("Speed", speed.y+0.4f - Mathf.Abs(speed.x/3));
             playerAnimator.SetInteger("State", state);
         }
     }
