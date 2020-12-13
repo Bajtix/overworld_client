@@ -157,7 +157,7 @@ MonoBehaviour:
     value: 27.5
   focalLength:
     overrideState: 1
-    value: 43
+    value: 37
   kernelSize:
     overrideState: 1
     value: 3
@@ -271,7 +271,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 19.2
+    value: 17.5
   tint:
     overrideState: 0
     value: 0

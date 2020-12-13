@@ -75,7 +75,7 @@ public class TerrainGenerator : MonoBehaviour
         StartCoroutine("ApplyChunkMods");
         if (QualitySettings.GetQualityLevel() > 2)
         {
-            //StartCoroutine("SpawnGrass"); //only spawn grass on high and above
+            StartCoroutine("SpawnGrass"); //only spawn grass on high and above
         }
     }
     /// <summary>
