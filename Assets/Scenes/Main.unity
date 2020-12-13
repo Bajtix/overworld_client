@@ -863,7 +863,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - label: Tilted Wall
-    icon: {fileID: 21300002, guid: cea2c9bf87b0c4dfdafb697a3ff00959, type: 3}
+    icon: {fileID: 21300000, guid: 3a68d86452c391c4d8aee79c587e652c, type: 3}
     call:
       m_PersistentCalls:
         m_Calls:
@@ -880,7 +880,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - label: U Stairs
-    icon: {fileID: 21300002, guid: cea2c9bf87b0c4dfdafb697a3ff00959, type: 3}
+    icon: {fileID: 21300000, guid: 01741d600d7e70a4ba81efc2a5dcbb72, type: 3}
     call:
       m_PersistentCalls:
         m_Calls:
@@ -897,7 +897,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - label: Tilted Wall Window
-    icon: {fileID: 21300002, guid: cea2c9bf87b0c4dfdafb697a3ff00959, type: 3}
+    icon: {fileID: 21300000, guid: 6f025e41f081e104bbe7d6c035e7670b, type: 3}
     call:
       m_PersistentCalls:
         m_Calls:
@@ -914,7 +914,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - label: L Stairs
-    icon: {fileID: 21300002, guid: cea2c9bf87b0c4dfdafb697a3ff00959, type: 3}
+    icon: {fileID: 21300000, guid: 09a93ef2f4e57174fb4b31888e6e4735, type: 3}
     call:
       m_PersistentCalls:
         m_Calls:
@@ -7750,6 +7750,7 @@ MonoBehaviour:
     - bld_wall_tilted_window
     - bld_stairs_l
     - prp_radio_receiver_1
+    - prp_log
     _keys:
     - prp_present
     - vec_rusty-buggy
@@ -7769,6 +7770,7 @@ MonoBehaviour:
     - bld_wall_tilted_window
     - bld_stairs_l
     - prp_radio_receiver_1
+    - prp_log
     _values:
     - {fileID: 283212582744607429, guid: 2660f404a7ef68245b4b7a735c3637af, type: 3}
     - {fileID: 971075604509001816, guid: 34eaf3f46474a5446b1d6e5ed95ff1bb, type: 3}
@@ -7788,6 +7790,7 @@ MonoBehaviour:
     - {fileID: 6735167144029711499, guid: 68710ba4524a5664ea25331188e566e3, type: 3}
     - {fileID: 7477776375176655565, guid: 60681303016d809438fa6a8701cc9741, type: 3}
     - {fileID: 5894906512406816982, guid: b59f2452cec656e4f80ceba12ed5a0f2, type: 3}
+    - {fileID: 8222305787853232994, guid: 760af71dcaaf2ae4395c14a9ae6227ac, type: 3}
   terrainObjectPrefabs: []
   items:
   - {fileID: 11400000, guid: c872ed9ed97d18241843d7f639b8fe98, type: 2}
@@ -8696,7 +8699,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -8708,9 +8711,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -11670,7 +11673,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -11682,9 +11685,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -19566,7 +19569,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -19578,9 +19581,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -20295,7 +20298,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -20307,9 +20310,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0

@@ -28,11 +28,11 @@ public class WheelRenderer : MonoBehaviour
     {
 
         if (carEntity.additionalDataObject == null) return;
-        var cdata = (CarController.CarData)carEntity.additionalDataObject;
+        var cdata = ((float,float,bool))carEntity.additionalDataObject;
         
-        steerAngle = cdata.steerAngle;
-        float motorAnglew = cdata.rpm;
-        bool playerIn = cdata.steered;
+        steerAngle = cdata.Item1;
+        float motorAnglew = cdata.Item2;
+        bool playerIn = cdata.Item3;
 
         if (playerIn)
         {

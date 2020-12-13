@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
         if (Cursor.lockState == CursorLockMode.Locked)
         {
 
+            
+
             if (Input.GetKeyDown(KeyCode.E))
                 ClientSend.Interact(camTransform, KeyCode.E);
 
@@ -65,6 +67,8 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetAxis("Mouse ScrollWheel") < 0)
                 ClientSend.Interact(camTransform, KeyCode.PageDown);
+
+            ClientSend.CamTransform(camTransform);
         }
 
         if (Input.GetKeyDown(KeyCode.I) && Cursor.lockState != CursorLockMode.Locked)

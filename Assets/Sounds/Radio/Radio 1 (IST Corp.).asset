@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4ffe9c4974654a99870d81f417fb4, type: 3}
+  m_Name: Radio 1 (IST Corp.)
+  m_EditorClassIdentifier: 
+  stationName: Radio 1
+  stationOwner: International Space Together Corp.
+  alertFrequency: 0
+  radioTracks:
+  - {fileID: 11400000, guid: a235319ccd4724847bef84a5da79f3a1, type: 2}
+  - {fileID: 11400000, guid: 161f948c179d84a45916daff6a9defc7, type: 2}
+  - {fileID: 11400000, guid: c815c291f1606b14b8682c4b2af847bb, type: 2}
+  - {fileID: 11400000, guid: 69008973f10500d43a0cbc027f20d9a8, type: 2}
+  - {fileID: 11400000, guid: 35cc2477464161245860e238b077b2e0, type: 2}
+  - {fileID: 11400000, guid: a235319ccd4724847bef84a5da79f3a1, type: 2}
+  - {fileID: 11400000, guid: 5d9e8ad85ee110340ad543c62b59b197, type: 2}
+  - {fileID: 11400000, guid: 1b3ff67b732924a44b0038920ef44d56, type: 2}
+  - {fileID: 11400000, guid: bb0085c71a50e8b4c92590963e8bc407, type: 2}
+  - {fileID: 11400000, guid: aabd62b80abbd81479df6867c009e3fb, type: 2}
+  - {fileID: 11400000, guid: a29060ae53f0e3242ae8caf12a596382, type: 2}
+  - {fileID: 11400000, guid: 5d9e8ad85ee110340ad543c62b59b197, type: 2}
+  - {fileID: 11400000, guid: e0e1f9b98040bcc4cbb503b91bc8d0b4, type: 2}
+  - {fileID: 11400000, guid: a235319ccd4724847bef84a5da79f3a1, type: 2}
+  - {fileID: 11400000, guid: f0003b0627141164ea13afc44153085e, type: 2}
+  - {fileID: 11400000, guid: a29060ae53f0e3242ae8caf12a596382, type: 2}
+  - {fileID: 11400000, guid: 95ac988fcd6b19d4592a2d82109cc3ec, type: 2}
+  - {fileID: 11400000, guid: d1c3637300a84d34d8853f46e7cc9158, type: 2}

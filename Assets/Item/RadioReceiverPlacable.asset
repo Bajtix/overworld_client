@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3968c2f30178a364b8b488cbbdbe9622, type: 3}
   m_Name: RadioReceiverPlacable
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300004, guid: cea2c9bf87b0c4dfdafb697a3ff00959, type: 3}
+  icon: {fileID: 21300000, guid: 08db90d63e5c7b040816477d38ec0e58, type: 3}
   name: Radio Receiver
   description: raDIO
   maxStackCount: 1

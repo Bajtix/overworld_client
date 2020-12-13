@@ -35,7 +35,7 @@ public class TerrainGenerator : MonoBehaviour
     /// <returns></returns>
     private IEnumerator GenerateCoroutine()
     {
-        Debug.Log("GENERATE: SET VERTS");
+        //Debug.Log("GENERATE: SET VERTS");
         mesh = GetComponent<MeshFilter>().mesh;
         meshCollider = GetComponent<MeshCollider>();
         List<float> heights = new List<float>();
@@ -75,7 +75,7 @@ public class TerrainGenerator : MonoBehaviour
         StartCoroutine("ApplyChunkMods");
         if (QualitySettings.GetQualityLevel() > 2)
         {
-            StartCoroutine("SpawnGrass"); //only spawn grass on high and above
+            //StartCoroutine("SpawnGrass"); //only spawn grass on high and above
         }
     }
     /// <summary>
@@ -84,7 +84,7 @@ public class TerrainGenerator : MonoBehaviour
     /// <returns></returns>
     public IEnumerator SpawnTrees()
     {
-        Debug.Log("GENERATE: SPAWN TREES");
+        //Debug.Log("GENERATE: SPAWN TREES");
 
 
         System.Random r = new System.Random(Mathf.RoundToInt(TerrainSettings.instance.seed + transform.position.x + transform.position.z));
@@ -108,7 +108,7 @@ public class TerrainGenerator : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log($"GENERATE: DONE (ChunkCount: {ChunkManager.instance.chunkCount})");
+        //Debug.Log($"GENERATE: DONE (ChunkCount: {ChunkManager.instance.chunkCount})");
     }
     /// <summary>
     /// Spawns other features
@@ -116,7 +116,7 @@ public class TerrainGenerator : MonoBehaviour
     /// <returns></returns>
     public IEnumerator SpawnDetails()
     {
-        Debug.Log("GENERATE: SPAWN DETAILS");
+        //Debug.Log("GENERATE: SPAWN DETAILS");
 
 
         System.Random r = new System.Random(Mathf.RoundToInt(TerrainSettings.instance.seed + transform.position.x + transform.position.z) / 3);
@@ -140,7 +140,8 @@ public class TerrainGenerator : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log($"GENERATE: DONE (ChunkCount: {ChunkManager.instance.chunkCount})");
+        //Debug.Log($"GENERATE: DONE (ChunkCount: {ChunkManager.instance.chunkCount})");
+
         //grassObj = Instantiate(gameObject, transform, true);
         //grassObj.GetComponent<MeshRenderer>().material = Instantiate(grassy);
 

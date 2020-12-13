@@ -109,6 +109,15 @@ public class ClientSend : MonoBehaviour
         }
     }
 
+    public static void CamTransform(Transform transform)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.look)) // TODO: change packet type to its own
+        {
+            _packet.Write(transform.rotation);
+            SendTCPData(_packet);
+        }
+    }
+
     
     #endregion
 }
