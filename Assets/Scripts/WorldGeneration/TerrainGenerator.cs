@@ -153,7 +153,7 @@ public class TerrainGenerator : MonoBehaviour
     /// <returns></returns>
     public IEnumerator SpawnGrass()
     {
-        Debug.Log("GENERATE: SET G VERTS");
+        //Debug.Log("GENERATE: SET G VERTS");
         mesh = lowLodV.GetComponent<MeshFilter>().mesh;
         Vector3[] verts = mesh.vertices;
 
