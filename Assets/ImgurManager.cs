@@ -25,5 +25,4 @@ public class ImgurManager : MonoBehaviour
 
         Debug.Log(imageUpload.Result.Link);
     }
-}
-*/
+}*/
