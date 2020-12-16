@@ -76,9 +76,11 @@ public class ClientHandle : MonoBehaviour
         Quaternion _rotation = _packet.ReadQuaternion();
         string _modelId = _packet.ReadString();
         int _parentId = _packet.ReadInt();
-        Debug.Log("new entity");
+        object _data = _packet.ReadObject();
 
-        GameManager.instance.SpawnNewEntity(_id, _position, _rotation, _modelId, _parentId);
+        Debug.Log("Receiving entity spawn");
+
+        GameManager.instance.SpawnNewEntity(_id, _position, _rotation, _modelId, _parentId, _data);
     }
 
     public static void EntityPosition(Packet _packet)

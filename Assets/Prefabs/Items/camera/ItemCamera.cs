@@ -27,13 +27,16 @@ public class ItemCamera : ItemReactor
         GameObject g = GameObject.FindObjectOfType<Canvas>().gameObject;
         gameObject.SetActive(false);
         g.SetActive(false);
-        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + "/Capture" + DateTime.Now.ToString().Replace(':', '-') + ".png");
+
+        string path = Application.persistentDataPath + "/Capture" + DateTime.Now.ToString().Replace(':', '-') + ".png";
+        ScreenCapture.CaptureScreenshot(path);
         LeanTween.delayedCall(0.2f, () =>
         {
             gameObject.SetActive(true); 
             g.SetActive(true);
-        });
 
+            ImgurManager.instance.UploadImage(path,transform.position);
+        });
 
     }
 

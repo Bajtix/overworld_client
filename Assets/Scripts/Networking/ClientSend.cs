@@ -119,5 +119,18 @@ public class ClientSend : MonoBehaviour
     }
 
     
+    public static void RequestEntity(string model, Vector3 position, Quaternion rotation, object data)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.requestEntity)) // TODO: change packet type to its own
+        {           
+            _packet.Write(model);
+            _packet.Write(position);
+            _packet.Write(rotation);
+
+            _packet.WriteObject(data);
+            SendTCPData(_packet);
+        }
+    }
+
     #endregion
 }

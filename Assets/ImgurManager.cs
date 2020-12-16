@@ -1,28 +1,43 @@
-/*using Imgur.API.Authentication; 
-using Imgur.API.Endpoints;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Net.Http;
 using UnityEngine;
+
 
 public class ImgurManager : MonoBehaviour
 {
 
-    private ApiClient apiClient;
+    private ImgurClient imgurClient ; //key goes here
 
-    private void Start()
+
+    public static ImgurManager instance;
+
+    private Vector3 pos;
+
+    private void Awake()
     {
-        apiClient = new ApiClient("89bdb09b8ea2675");
+        imgurClient = new ImgurClient(File.ReadAllText(Application.dataPath + "imgurKey.txt"));
 
-        var httpClient = new HttpClient();
 
-        var filePath = Application.persistentDataPath + "/screentest.png";
-        using var fileStream = File.OpenRead(filePath);
-
-        var imageEndpoint = new ImageEndpoint(apiClient, httpClient);
-        var imageUpload = imageEndpoint.UploadImageAsync(fileStream);
-
-        Debug.Log(imageUpload.Result.Link);
+        instance = this;
     }
-}*/
+
+
+    private void OnEnable()
+    {
+        imgurClient.OnImageUploaded += ImgurClient_OnImageUploaded;
+    }
+
+    private void ImgurClient_OnImageUploaded(object sender, ImgurClient.OnImageUploadedEventArgs e)
+    {
+        Debug.Log("Upload Complete: " + e.response.data.link);
+
+        ClientSend.RequestEntity("prp_pic", pos, Quaternion.identity, e.response.data.link);
+    }
+
+
+    public void UploadImage(string path,Vector3 camPos)
+    {
+        imgurClient.UploadImageFromFilePath(path);
+        pos = camPos;
+    }
+}
+

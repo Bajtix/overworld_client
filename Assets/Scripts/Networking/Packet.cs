@@ -52,7 +52,8 @@ public enum ClientPackets
     invReq,
     invMod,
     consoleCmd,
-    look
+    look,
+    requestEntity
 }
 
 public class Packet : IDisposable

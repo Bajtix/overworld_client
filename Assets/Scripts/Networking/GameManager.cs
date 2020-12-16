@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     /// <param name="rotation">New entity's rotation</param>
     /// <param name="modelId"> The entity to spawn </param>
     /// <param name="parentId">New entity's parent id (-9999 if none) </param>
-    public void SpawnNewEntity(int id, Vector3 position, Quaternion rotation, string modelId, int parentId)
+    public void SpawnNewEntity(int id, Vector3 position, Quaternion rotation, string modelId, int parentId, object data = null)
     {
         Entity _entity;
         if (parentId == -9999)
@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
 
         _entity.Initialize(id,modelId,parentId);
         _entity.SetTargets(position, Quaternion.identity,"",null);
+        _entity.additionalDataObject = data;
         entities.Add(id, _entity);
     }
 
