@@ -78,9 +78,9 @@ public class ClientHandle : MonoBehaviour
         int _parentId = _packet.ReadInt();
         object _data = _packet.ReadObject();
 
-        Debug.Log("Receiving entity spawn");
 
         GameManager.instance.SpawnNewEntity(_id, _position, _rotation, _modelId, _parentId, _data);
+        GameManager.entities[_id].SetTargets(_position, _rotation,"",_data);
     }
 
     public static void EntityPosition(Packet _packet)
@@ -91,6 +91,7 @@ public class ClientHandle : MonoBehaviour
         string _ad = _packet.ReadString();
         object _adob = _packet.ReadObject();
 
+        if(GameManager.entities.ContainsKey(_id))
         GameManager.entities[_id].SetTargets(_position, _rotation, _ad,_adob);
     }
 
@@ -178,5 +179,10 @@ public class ClientHandle : MonoBehaviour
             GameManager.players[_player].item.TPSResponse(_response);
     }
 
+    public static void ConsoleMessage(Packet _packet)
+    {
+        string _ms = _packet.ReadString();
 
+        UIManager.instance.cmd.ReceivedText(_ms);
+    }
 }

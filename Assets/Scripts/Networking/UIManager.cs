@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
         if (loading)
             loadingCountdown += Time.deltaTime;
 
-        if (loadingCountdown > 20)
+        if (loadingCountdown > 10)
         {
             Client.instance.Disconnect();
             Debug.Log("Timed out");

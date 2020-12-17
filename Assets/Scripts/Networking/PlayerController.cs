@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     {
         //camTransform = transform.Find("Camera");
         UIManager.instance.loading = false;
+
+        UIManager.instance.EndLoading();
     }
 
     private void Update()
@@ -31,10 +33,16 @@ public class PlayerController : MonoBehaviour
         if (f1) return;
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Client.instance.Disconnect();
+           
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            
+            UIManager.instance.loadMsg.SetActive(true);
+            UIManager.instance.loadscreen.SetActive(true);
+            Client.instance.Disconnect();
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            
+            
         }
 
         
@@ -80,13 +88,7 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if (UIManager.instance.loadMsg.activeInHierarchy)
-        {
-            if(Physics.Raycast(transform.position,new Vector3(0,-1,0),2))
-            {
-                UIManager.instance.EndLoading();
-            }
-        }
+        
         
         //Debug.Log($"FRAME DEBUGGER: Running at {1/Time.deltaTime} FPS");
         

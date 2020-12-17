@@ -12,13 +12,13 @@ public class Console : MonoBehaviour
     public void OnSubmit(string s)
     {
         inputField.text = "";
-        consoleText.text += "\n>" + s;
+        consoleText.text += "\n> " + s;
 
         ClientSend.ConsoleCommand(s);
     }
 
     public void ReceivedText(string s)
     {
-        consoleText.text += "\n<" + s;
+        consoleText.text += "\n< " + s;
     }
 }

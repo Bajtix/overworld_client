@@ -16,7 +16,7 @@ public class Client : MonoBehaviour
     public TCP tcp;
     public UDP udp;
 
-    private bool isConnected = false;
+    public bool isConnected = false;
     private delegate void PacketHandler(Packet _packet);
     private static Dictionary<int, PacketHandler> packetHandlers;
 
@@ -309,7 +309,8 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.openGUI, ClientHandle.OpenGUI },
             { (int)ServerPackets.inventory, ClientHandle.LoadInventory },
             { (int)ServerPackets.info, ClientHandle.ShowInfoBox },
-            { (int)ServerPackets.itemResponse, ClientHandle.ItemResponse }
+            { (int)ServerPackets.itemResponse, ClientHandle.ItemResponse },
+            { (int)ServerPackets.consoleMessage,  ClientHandle.ConsoleMessage }
         };
         Debug.Log("Initialized packets.");
     }
@@ -324,6 +325,11 @@ public class Client : MonoBehaviour
                 tcp.socket.Close();
             if (udp.socket != null)
                 udp.socket.Close();
+
+            GameManager.entities.Clear();
+            GameManager.players.Clear();
+            
+            
 
             Debug.Log("Disconnected from server.");
         }

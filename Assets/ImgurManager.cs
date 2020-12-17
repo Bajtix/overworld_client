@@ -14,7 +14,7 @@ public class ImgurManager : MonoBehaviour
 
     private void Awake()
     {
-        imgurClient = new ImgurClient(File.ReadAllText(Application.dataPath + "imgurKey.txt"));
+        imgurClient = new ImgurClient(File.ReadAllText(Application.dataPath + "/imgurKey.txt"));
 
 
         instance = this;

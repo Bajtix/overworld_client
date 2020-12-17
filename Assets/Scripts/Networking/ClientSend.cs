@@ -37,6 +37,8 @@ public class ClientSend : MonoBehaviour
     /// <param name="_inputs"></param>
     public static void PlayerMovement(bool[] _inputs)
     {
+        if (Client.instance.udp == null) return;
+
         using (Packet _packet = new Packet((int)ClientPackets.playerMovement))
         {
             _packet.Write(_inputs.Length);
@@ -44,6 +46,8 @@ public class ClientSend : MonoBehaviour
             {
                 _packet.Write(_input);
             }
+
+            
             _packet.Write(GameManager.players[Client.instance.myId].transform.rotation);
 
             SendUDPData(_packet);
