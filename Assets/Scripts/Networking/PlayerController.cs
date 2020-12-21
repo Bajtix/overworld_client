@@ -58,6 +58,14 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
                 ClientSend.Interact(camTransform, KeyCode.F);
 
+            if (Input.GetKeyDown(KeyCode.G))
+                ClientSend.Interact(camTransform, KeyCode.G);
+
+            if (Input.GetKeyDown(KeyCode.X))
+                ClientSend.Interact(camTransform, KeyCode.X);
+
+
+
             if (Input.GetKeyDown(KeyCode.Mouse0))
                 ClientSend.Interact(camTransform, KeyCode.Mouse0);
 
