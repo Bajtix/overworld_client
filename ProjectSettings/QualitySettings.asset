@@ -4,8 +4,80 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 5
+  m_CurrentQuality: 4
   m_QualitySettings:
+  - serializedVersion: 2
+    name: Oh fuck my eyes
+    pixelLightCount: 0
+    shadows: 0
+    shadowResolution: 0
+    shadowProjection: 0
+    shadowCascades: 1
+    shadowDistance: 0
+    shadowNearPlaneOffset: 0
+    shadowCascade2Split: 0.33333334
+    shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
+    shadowmaskMode: 0
+    skinWeights: 1
+    textureQuality: 3
+    anisotropicTextures: 0
+    antiAliasing: 0
+    softParticles: 0
+    softVegetation: 1
+    realtimeReflectionProbes: 0
+    billboardsFaceCameraPosition: 0
+    vSyncCount: 0
+    lodBias: 0.4
+    maximumLODLevel: 3
+    streamingMipmapsActive: 0
+    streamingMipmapsAddAllCameras: 1
+    streamingMipmapsMemoryBudget: 512
+    streamingMipmapsRenderersPerFrame: 512
+    streamingMipmapsMaxLevelReduction: 2
+    streamingMipmapsMaxFileIORequests: 1024
+    particleRaycastBudget: 1
+    asyncUploadTimeSlice: 2
+    asyncUploadBufferSize: 16
+    asyncUploadPersistentBuffer: 1
+    resolutionScalingFixedDPIFactor: 1
+    customRenderPipeline: {fileID: 0}
+    excludedTargetPlatforms: []
+  - serializedVersion: 2
+    name: Potato
+    pixelLightCount: 1
+    shadows: 1
+    shadowResolution: 0
+    shadowProjection: 1
+    shadowCascades: 1
+    shadowDistance: 10
+    shadowNearPlaneOffset: 0.2
+    shadowCascade2Split: 0.33333334
+    shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
+    shadowmaskMode: 0
+    skinWeights: 2
+    textureQuality: 3
+    anisotropicTextures: 0
+    antiAliasing: 0
+    softParticles: 0
+    softVegetation: 1
+    realtimeReflectionProbes: 0
+    billboardsFaceCameraPosition: 0
+    vSyncCount: 0
+    lodBias: 0.66
+    maximumLODLevel: 2
+    streamingMipmapsActive: 0
+    streamingMipmapsAddAllCameras: 1
+    streamingMipmapsMemoryBudget: 512
+    streamingMipmapsRenderersPerFrame: 512
+    streamingMipmapsMaxLevelReduction: 2
+    streamingMipmapsMaxFileIORequests: 1024
+    particleRaycastBudget: 4
+    asyncUploadTimeSlice: 2
+    asyncUploadBufferSize: 16
+    asyncUploadPersistentBuffer: 1
+    resolutionScalingFixedDPIFactor: 1
+    customRenderPipeline: {fileID: 0}
+    excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Very Low
     pixelLightCount: 2
@@ -28,7 +100,7 @@ QualitySettings:
     billboardsFaceCameraPosition: 0
     vSyncCount: 0
     lodBias: 0.7
-    maximumLODLevel: 0
+    maximumLODLevel: 1
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
     streamingMipmapsMemoryBudget: 512
@@ -222,4 +294,5 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
-  m_PerPlatformDefaultQuality: {}
+  m_PerPlatformDefaultQuality:
+    Standalone: 5

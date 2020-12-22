@@ -17,6 +17,17 @@ public class TerrainGenerator : MonoBehaviour
 
     public ChunkManager.V2Int chunkCoords;
 
+    public float _mtnNoiseScale = 0.02f;
+    public float _baseDetailScale = 0.03f;
+    public float _mountainPlateScale = 0.005f;
+
+    public float mtnNoiseScale = 0.02f;
+    public float baseDetailScale = 0.03f;
+    public float detailLayers = 0f;
+    public float mountainPlateScale = 0.0005f;
+
+    public float mountainMainScale = 5;
+
     private void Start()
     {
         objects = new Dictionary<int, ChunkObject>();
@@ -35,6 +46,8 @@ public class TerrainGenerator : MonoBehaviour
     /// <returns></returns>
     private IEnumerator GenerateCoroutine()
     {
+        SetVars();
+
         //Debug.Log("GENERATE: SET VERTS");
         mesh = GetComponent<MeshFilter>().mesh;
         meshCollider = GetComponent<MeshCollider>();
@@ -44,10 +57,8 @@ public class TerrainGenerator : MonoBehaviour
         for (int i = 0; i < verts.Length; i++)
         {
             var v = verts[i];
-            verts[i].y = GetPass(v.x, v.z, TerrainSettings.instance.noiseScale / 70, TerrainSettings.instance.multiplier * 20)
-                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale / 20, TerrainSettings.instance.multiplier * 10)
-                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale, TerrainSettings.instance.multiplier)
-                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale * 4, TerrainSettings.instance.multiplier / 8);
+            verts[i].y = GetHeight(transform.position.x + v.x + TerrainSettings.instance.seed / 1.1233464534f,
+                transform.position.z + v.z + TerrainSettings.instance.seed / 2 / 1.165882234141f);
             if (i % 400 == 0)
             {
                 yield return new WaitForEndOfFrame();
@@ -99,7 +110,7 @@ public class TerrainGenerator : MonoBehaviour
             int selected = r.Next(0, TerrainSettings.instance.treePrefabs.Length);
 
             RaycastHit hit;
-            if (Physics.Raycast(new Vector3(transform.position.x + x, 200, transform.position.z + y), new Vector3(0, -1, 0), out hit))
+            if (Physics.Raycast(new Vector3(transform.position.x + x, 800, transform.position.z + y), new Vector3(0, -1, 0), out hit))
             {
                 GameObject o = Instantiate(TerrainSettings.instance.treePrefabs[selected], hit.point, Quaternion.identity, transform);
                 o.transform.Rotate(new Vector3(0, r.Next(0, 360), 0));
@@ -131,7 +142,7 @@ public class TerrainGenerator : MonoBehaviour
             int selected = r.Next(0, TerrainSettings.instance.detailPrefabs.Length);
 
             RaycastHit hit;
-            if (Physics.Raycast(new Vector3(transform.position.x + x, 200, transform.position.z + y), new Vector3(0, -1, 0), out hit))
+            if (Physics.Raycast(new Vector3(transform.position.x + x, 1000, transform.position.z + y), new Vector3(0, -1, 0), out hit))
             {
                 GameObject o = Instantiate(TerrainSettings.instance.detailPrefabs[selected], hit.point, Quaternion.identity, transform);
                 o.transform.Rotate(new Vector3(0, r.Next(0, 360), 0));
@@ -160,10 +171,8 @@ public class TerrainGenerator : MonoBehaviour
         for (int i = 0; i < verts.Length; i++)
         {
             var v = verts[i];
-            verts[i].y = GetPass(v.x, v.z, TerrainSettings.instance.noiseScale / 70, TerrainSettings.instance.multiplier * 20)
-                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale / 20, TerrainSettings.instance.multiplier * 10)
-                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale, TerrainSettings.instance.multiplier)
-                + GetPass(v.x, v.z, TerrainSettings.instance.noiseScale * 4, TerrainSettings.instance.multiplier / 8);
+            verts[i].y = GetHeight(transform.position.x + v.x + TerrainSettings.instance.seed / 1.1233464534f,
+                transform.position.z + v.z + TerrainSettings.instance.seed / 2 / 1.165882234141f);
             if (i % 400 == 0)
             {
                 yield return new WaitForEndOfFrame();
@@ -243,14 +252,44 @@ public class TerrainGenerator : MonoBehaviour
         }
     }
 
-    private float GetPass(float x, float z, float scale, float mult)
+    private float GetHeight(float i, float j)
     {
-        return GetPass(x, z, scale) * mult;
+        //Base mounatins
+        float baseMountains = Mathf.PerlinNoise(i * mtnNoiseScale, j * mtnNoiseScale);
+
+        float mountainPlate = Mathf.PerlinNoise(i * mountainPlateScale, j * mountainPlateScale);
+        float mountainGroundPlate = Mathf.PerlinNoise(i * mountainPlateScale / 2f, j * mountainPlateScale / 2f);
+        float bias = Mathf.PerlinNoise(i * mountainPlateScale / 4f, j * mountainPlateScale / 4f) * 0.2f;
+        float smoothness = (Mathf.PerlinNoise(i * mountainPlateScale * 4f, j * mountainPlateScale * 4f) * 0.4f) + .6f;
+
+
+        baseMountains *= mountainPlate * mountainMainScale;
+        baseMountains += bias;
+
+        float pw = Mathf.PerlinNoise(i * mountainPlateScale, j * mountainPlateScale);
+        float pdetail = Mathf.Pow(baseMountains, pw * 4.25f);
+
+        //Creates and layers detail
+        float detail = 0;
+        for (int k = 1; k < detailLayers + 1f; k++)
+        {
+            float d = Mathf.PerlinNoise(i * baseDetailScale * k, j * baseDetailScale * k);
+            detail += d / k;
+        }
+
+        detail *= smoothness;
+
+        float hght = pdetail + detail * (1f / 6f);
+
+
+        return hght / 1.5f * TerrainSettings.instance.multiplier;
     }
 
-    private float GetPass(float x, float z, float scale)
+    private void SetVars()
     {
-        return Mathf.PerlinNoise((transform.position.x + x + TerrainSettings.instance.seed / 1.1233464534f) * scale, (transform.position.z + z + TerrainSettings.instance.seed / 2 / 1.165882234141f) * scale);
+        mtnNoiseScale = _mtnNoiseScale * TerrainSettings.instance.noiseScale;
+        baseDetailScale = _baseDetailScale * TerrainSettings.instance.noiseScale;
+        mountainPlateScale = _mountainPlateScale * TerrainSettings.instance.noiseScale;
     }
 
     /// <summary>

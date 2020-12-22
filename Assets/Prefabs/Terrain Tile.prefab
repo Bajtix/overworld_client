@@ -243,6 +243,14 @@ MonoBehaviour:
   wind: {fileID: 9096365131155315722}
   avgHeight: 0
   lowLodV: {fileID: 5439037686103699711}
+  _mtnNoiseScale: 0.02
+  _baseDetailScale: 0.03
+  _mountainPlateScale: 0.005
+  mtnNoiseScale: 0.02
+  baseDetailScale: 0.03
+  detailLayers: 15
+  mountainPlateScale: 0.0005
+  mountainMainScale: 5
 --- !u!1001 &4060763499190757878
 PrefabInstance:
   m_ObjectHideFlags: 0
